@@ -6,3 +6,6 @@ semantic-ish versions.
 
 ## [0.5.0] - 2026-09-01
 
+### Added
+- Go topology engine (`topology/`): per-round latency, drops, stragglers, and
+  scheduled partitions, all deterministic from the scenario seed.
