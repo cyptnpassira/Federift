@@ -9,3 +9,5 @@ semantic-ish versions.
 ### Added
 - Go topology engine (`topology/`): per-round latency, drops, stragglers, and
   scheduled partitions, all deterministic from the scenario seed.
+- `-emit-trace` on the Go CLI producing a compact reachability document.
+- Python `run --trace` consumes the Go trace, dropping unreachable clients from
