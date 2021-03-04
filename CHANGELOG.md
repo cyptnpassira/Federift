@@ -16,3 +16,6 @@ semantic-ish versions.
 
 ### Changed
 - Scenario schema formalised into three namespaced blocks (`federation`,
+  `privacy`, `network`) so each language ignores what it doesn't own.
+
+## [0.4.0] - 2026-08-24
