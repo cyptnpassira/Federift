@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Go
+/topology/topology
+/topology/cmd/topology/topology
+*.exe
+
+# federift runtime artifacts
+/trace.json
