@@ -24,3 +24,6 @@ semantic-ish versions.
 - Approximate DP accounting: Gaussian-mechanism plus naive **and** advanced
   composition; reports the tighter of the two.
 - Leakage heuristics module (`leakage.py`): update distinguishability and
+  gradient-cosine leak, surfaced in the CLI report.
+- `privacy` subcommand for accounting-only output.
+
