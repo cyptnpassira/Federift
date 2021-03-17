@@ -27,3 +27,5 @@ semantic-ish versions.
   gradient-cosine leak, surfaced in the CLI report.
 - `privacy` subcommand for accounting-only output.
 
+### Changed
+- Server-side Gaussian noise wired into the round loop; `sigma = 0` documented
