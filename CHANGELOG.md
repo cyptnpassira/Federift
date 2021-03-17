@@ -29,3 +29,6 @@ semantic-ish versions.
 
 ### Changed
 - Server-side Gaussian noise wired into the round loop; `sigma = 0` documented
+  as the explicit non-private baseline.
+
+## [0.3.0] - 2025-11-18
