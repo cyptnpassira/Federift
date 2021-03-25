@@ -48,3 +48,5 @@ semantic-ish versions.
 
 ## [0.1.0] - 2022-09-04
 
+### Added
+- Initial Python stdlib core: deterministic toy-vector clients, IID
