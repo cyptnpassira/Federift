@@ -7,3 +7,5 @@ TRACE   ?= trace.json
 
 help:
 	@echo "targets: build build-go build-py run pipeline partition privacy clean"
+
+build: build-go build-py ## compile both halves
