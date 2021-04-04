@@ -14,3 +14,4 @@ build-go: ## go build + vet
 	cd topology && go build ./... && go vet ./...
 
 build-py: ## python bytecode-compile check
+	$(PY) -m compileall -q federift
