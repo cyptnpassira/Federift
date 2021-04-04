@@ -12,3 +12,5 @@ build: build-go build-py ## compile both halves
 
 build-go: ## go build + vet
 	cd topology && go build ./... && go vet ./...
+
+build-py: ## python bytecode-compile check
