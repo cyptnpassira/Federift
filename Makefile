@@ -6,3 +6,4 @@ TRACE   ?= trace.json
 .PHONY: build build-go build-py run pipeline partition privacy clean help
 
 help:
+	@echo "targets: build build-go build-py run pipeline partition privacy clean"
