@@ -4,3 +4,5 @@ SCEN    ?= federift/scenarios/fractured-robust.json
 TRACE   ?= trace.json
 
 .PHONY: build build-go build-py run pipeline partition privacy clean help
+
+help:
