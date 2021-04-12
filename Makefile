@@ -15,3 +15,5 @@ build-go: ## go build + vet
 
 build-py: ## python bytecode-compile check
 	$(PY) -m compileall -q federift
+
+run: ## run a scenario through the Python core (no network trace)
