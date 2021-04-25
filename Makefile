@@ -19,3 +19,4 @@ build-py: ## python bytecode-compile check
 run: ## run a scenario through the Python core (no network trace)
 	$(PY) -m federift run $(SCEN)
 
+partition: ## show non-IID label skew for a scenario
