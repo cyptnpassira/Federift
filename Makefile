@@ -23,3 +23,5 @@ partition: ## show non-IID label skew for a scenario
 	$(PY) -m federift partition $(SCEN)
 
 privacy: ## print the DP accounting approximation
+	$(PY) -m federift privacy $(SCEN)
+
