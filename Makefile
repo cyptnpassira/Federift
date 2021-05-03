@@ -22,3 +22,4 @@ run: ## run a scenario through the Python core (no network trace)
 partition: ## show non-IID label skew for a scenario
 	$(PY) -m federift partition $(SCEN)
 
+privacy: ## print the DP accounting approximation
