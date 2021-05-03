@@ -25,3 +25,5 @@ partition: ## show non-IID label skew for a scenario
 privacy: ## print the DP accounting approximation
 	$(PY) -m federift privacy $(SCEN)
 
+pipeline: ## Go emits a network trace, Python consumes it
+	cd topology && go run ./cmd/topology -scenario ../$(SCEN) -emit-trace ../$(TRACE)
