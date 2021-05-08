@@ -27,3 +27,4 @@ privacy: ## print the DP accounting approximation
 
 pipeline: ## Go emits a network trace, Python consumes it
 	cd topology && go run ./cmd/topology -scenario ../$(SCEN) -emit-trace ../$(TRACE)
+	$(PY) -m federift run $(SCEN) --trace $(TRACE)
