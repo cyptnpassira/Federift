@@ -35,3 +35,11 @@ splits into islands. Federift makes the breakage first-class:
 - **stragglers**: a heavy tail that pushes a client past the round deadline.
 - **partitions**: scheduled windows where a named set of clients is isolated
   from the aggregator entirely.
+
+Each of those removes a client from a round. That changes who contributes,
+which changes what the aggregate reveals, which is where the privacy story
+starts. The whole repository exists to let you watch those three things move
+together.
+
+## The two halves
+
