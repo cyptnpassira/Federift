@@ -27,3 +27,11 @@ partitions the network produced.
 ## Why break the network on purpose
 
 Federated learning is usually drawn as a tidy star: a server, some clients, a
+few arrows. Reality is a network that drops packets, stalls on stragglers, and
+splits into islands. Federift makes the breakage first-class:
+
+- **latency**: per-client base plus jitter, deterministic per (round, client).
+- **drops**: Bernoulli packet loss before an update ever leaves.
+- **stragglers**: a heavy tail that pushes a client past the round deadline.
+- **partitions**: scheduled windows where a named set of clients is isolated
+  from the aggregator entirely.
