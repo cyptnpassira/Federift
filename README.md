@@ -43,3 +43,11 @@ together.
 
 ## The two halves
 
+### Python, the privacy core (`federift/`)
+
+Pure standard library. No numpy, no torch. Vectors are `list[float]`.
+
+| module | responsibility |
+|---|---|
+| `vectors.py`   | vector math (`add`, `mean`, `clip_l2`, `l2_distance`) |
+| `rng.py`       | seed fan-out via SHA-256 into reproducible sub-streams |
