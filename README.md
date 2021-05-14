@@ -51,3 +51,11 @@ Pure standard library. No numpy, no torch. Vectors are `list[float]`.
 |---|---|
 | `vectors.py`   | vector math (`add`, `mean`, `clip_l2`, `l2_distance`) |
 | `rng.py`       | seed fan-out via SHA-256 into reproducible sub-streams |
+| `partition.py` | IID split plus Dirichlet(alpha) non-IID label skew |
+| `clients.py`   | deterministic toy-vector clients, each with a target from its label mix |
+| `aggregate.py` | FedAvg, uniform mean, coordinate-wise trimmed mean, simplified multi-Krum |
+| `privacy.py`   | Gaussian-mechanism noise plus approximate (epsilon, delta) accounting |
+| `leakage.py`   | membership and leakage heuristics (distinguishability, gradient cosine) |
+| `simulator.py` | the round loop that ties it together and can consume a Go trace |
+| `cli.py`       | text and JSON reports |
+
