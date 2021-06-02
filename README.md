@@ -59,3 +59,11 @@ Pure standard library. No numpy, no torch. Vectors are `list[float]`.
 | `simulator.py` | the round loop that ties it together and can consume a Go trace |
 | `cli.py`       | text and JSON reports |
 
+### Go, the topology engine (`topology/`)
+
+Also pure standard library (`math/rand`, `hash/fnv`, `encoding/json`).
+
+| package | responsibility |
+|---|---|
+| `scenario/` | parses the shared JSON (only the fields Go needs) |
+| `engine/`   | per-round latency, drop, straggler, and partition simulation |
