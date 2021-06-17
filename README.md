@@ -75,3 +75,10 @@ so you can extend one without recompiling the other.
 ## The scenario is the contract
 
 One file feeds both halves. Blocks are namespaced by who reads them:
+
+```jsonc
+{
+  "name": "fractured-robust",
+  "seed": 424242,
+  "federation": {          // Python reads this
+    "num_clients": 24, "rounds": 50, "dim": 32,
