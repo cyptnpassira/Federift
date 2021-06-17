@@ -67,3 +67,11 @@ Also pure standard library (`math/rand`, `hash/fnv`, `encoding/json`).
 |---|---|
 | `scenario/` | parses the shared JSON (only the fields Go needs) |
 | `engine/`   | per-round latency, drop, straggler, and partition simulation |
+| `cmd/topology/` | CLI: text report, full JSON, or `-emit-trace` for Python |
+
+The two sides are decoupled: each ignores JSON fields it does not understand,
+so you can extend one without recompiling the other.
+
+## The scenario is the contract
+
+One file feeds both halves. Blocks are namespaced by who reads them:
