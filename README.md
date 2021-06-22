@@ -122,3 +122,11 @@ python -m federift partition federift/scenarios/fractured-robust.json
 
 # just the DP accounting approximation
 python -m federift privacy federift/scenarios/noniid-dp.json
+```
+
+Or install the console script:
+
+```bash
+pip install -e .
+federift run federift/scenarios/baseline-iid.json
+```
