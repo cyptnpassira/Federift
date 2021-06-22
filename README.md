@@ -82,3 +82,11 @@ One file feeds both halves. Blocks are namespaced by who reads them:
   "seed": 424242,
   "federation": {          // Python reads this
     "num_clients": 24, "rounds": 50, "dim": 32,
+    "num_classes": 12, "num_samples": 12000,
+    "partition": "dirichlet", "alpha": 0.05,
+    "clients_per_round": 12, "lr": 0.35, "jitter": 0.08,
+    "aggregator": "trimmed", "trim_beta": 0.2
+  },
+  "privacy": {             // Python reads this
+    "clip_norm": 0.8, "sigma": 0.7, "delta": 1e-6
+  },
