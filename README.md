@@ -90,3 +90,11 @@ One file feeds both halves. Blocks are namespaced by who reads them:
   "privacy": {             // Python reads this
     "clip_norm": 0.8, "sigma": 0.7, "delta": 1e-6
   },
+  "network": {             // Go reads this
+    "base_latency_ms": 50, "jitter_ms": 25,
+    "drop_prob": 0.1, "straggler_prob": 0.2,
+    "straggler_extra_ms": 1200, "deadline_ms": 500,
+    "partitions": [
+      { "round_start": 8,  "round_end": 14, "isolated": [0,1,2,3,4] },
+      { "round_start": 25, "round_end": 33, "isolated": [12,13,14,15,16,17] },
+      { "round_start": 40, "round_end": 44, "isolated": [20,21,22,23] }
