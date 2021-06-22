@@ -106,3 +106,11 @@ One file feeds both halves. Blocks are namespaced by who reads them:
 Three bundled scenarios live in `federift/scenarios/`: `baseline-iid`,
 `noniid-dp`, and `fractured-robust`.
 
+## Running it
+
+### Python (no install needed)
+
+```bash
+# list bundled scenarios
+python -m federift scenarios
+
