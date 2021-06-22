@@ -98,3 +98,11 @@ One file feeds both halves. Blocks are namespaced by who reads them:
       { "round_start": 8,  "round_end": 14, "isolated": [0,1,2,3,4] },
       { "round_start": 25, "round_end": 33, "isolated": [12,13,14,15,16,17] },
       { "round_start": 40, "round_end": 44, "isolated": [20,21,22,23] }
+    ]
+  }
+}
+```
+
+Three bundled scenarios live in `federift/scenarios/`: `baseline-iid`,
+`noniid-dp`, and `fractured-robust`.
+
