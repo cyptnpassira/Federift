@@ -130,3 +130,11 @@ Or install the console script:
 pip install -e .
 federift run federift/scenarios/baseline-iid.json
 ```
+
+### Go
+
+```bash
+cd topology
+go build ./...
+go run ./cmd/topology -scenario ../federift/scenarios/fractured-robust.json
+```
