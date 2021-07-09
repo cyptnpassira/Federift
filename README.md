@@ -146,3 +146,10 @@ go run ./cmd/topology -scenario ../federift/scenarios/fractured-robust.json
 cd topology
 go run ./cmd/topology \
     -scenario ../federift/scenarios/fractured-robust.json \
+    -emit-trace ../trace.json
+
+# 2) Python runs the federated round, honouring exactly those drops
+cd ..
+python -m federift run federift/scenarios/fractured-robust.json --trace trace.json
+```
+
