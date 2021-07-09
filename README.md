@@ -138,3 +138,11 @@ cd topology
 go build ./...
 go run ./cmd/topology -scenario ../federift/scenarios/fractured-robust.json
 ```
+
+### The handshake: Go network feeds Python privacy
+
+```bash
+# 1) Go simulates the network and writes a reachability trace
+cd topology
+go run ./cmd/topology \
+    -scenario ../federift/scenarios/fractured-robust.json \
