@@ -169,3 +169,11 @@ in `examples/` runs both steps: `examples/pipeline.sh` (POSIX) or
   from the crowd's average update, normalised. A crude membership-inference
   proxy: an update that is easy to pick out is intuitively easier to detect.
 - **cosine leak**: how strongly a raw update points along the client's own
+  private target direction. Turning up `sigma` should push both leakage signals
+  down, and convergence up (that is, worse: the trade-off).
+- **epsilon**: printed only when `sigma > 0`. Computed from the classic
+  Gaussian-mechanism bound and composed with both the naive and advanced
+  composition theorems; federift reports the smaller. These are teaching
+  approximations.
+
+### A worked reading
