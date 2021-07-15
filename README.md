@@ -153,3 +153,11 @@ cd ..
 python -m federift run federift/scenarios/fractured-robust.json --trace trace.json
 ```
 
+Now the `drop` column in Python's report matches the partitions Go scheduled.
+Convergence stalls during an isolation window, then recovers. A one-shot script
+in `examples/` runs both steps: `examples/pipeline.sh` (POSIX) or
+`examples/pipeline.ps1` (PowerShell).
+
+## Reading the numbers
+
+<img src="docs/assets/privacy.svg" alt="A convergence curve descending toward client targets alongside a leakage-signal band that shrinks as the sigma noise dial turns up" width="640" />
