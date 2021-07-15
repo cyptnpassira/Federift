@@ -161,3 +161,11 @@ in `examples/` runs both steps: `examples/pipeline.sh` (POSIX) or
 ## Reading the numbers
 
 <img src="docs/assets/privacy.svg" alt="A convergence curve descending toward client targets alongside a leakage-signal band that shrinks as the sigma noise dial turns up" width="640" />
+
+- **convergence**: mean L2 distance between the global model and every client's
+  private target. It goes down as the federation agrees. DP noise and dropped
+  clients slow it.
+- **leak-dist (distinguishability)**: how far each client's clipped update sits
+  from the crowd's average update, normalised. A crude membership-inference
+  proxy: an update that is easy to pick out is intuitively easier to detect.
+- **cosine leak**: how strongly a raw update points along the client's own
