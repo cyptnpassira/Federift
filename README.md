@@ -185,3 +185,11 @@ rnd part drop     step  converge  leak-dist
  10    3    9   3.34xx    x.xxxx   #######################   <- partition window
  ...
  34   11    1   x.xxxx    x.xxxx   #####..........          <- healthy round
+```
+
+During rounds 8 to 14, 25 to 33, and 40 to 44 the isolated clusters vanish from
+`part` and the `drop` count spikes: the Go partition schedule bleeding into the
+Python learning loop. Convergence flattens while the network is fractured and
+resumes once the island rejoins.
+
+## The honest part (read twice)
