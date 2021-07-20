@@ -193,3 +193,11 @@ Python learning loop. Convergence flattens while the network is fractured and
 resumes once the island rejoins.
 
 ## The honest part (read twice)
+
+federift is built to be pedagogically honest, so here is the fine print in
+plain language.
+
+1. **This is not a privacy proof.** The `(epsilon, delta)` values come from
+   closed-form sufficient conditions (the Dwork and Roth Gaussian-mechanism
+   bound, plus naive and advanced composition). They are loose. Real
+   deployments use an RDP, PLD, or moments accountant that gives far tighter,
