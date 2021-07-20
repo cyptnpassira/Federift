@@ -177,3 +177,11 @@ in `examples/` runs both steps: `examples/pipeline.sh` (POSIX) or
   approximations.
 
 ### A worked reading
+
+From `fractured-robust` with the Go trace applied you will see something like:
+
+```
+rnd part drop     step  converge  leak-dist
+ 10    3    9   3.34xx    x.xxxx   #######################   <- partition window
+ ...
+ 34   11    1   x.xxxx    x.xxxx   #####..........          <- healthy round
