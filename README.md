@@ -224,3 +224,11 @@ federift is the sketch you draw before reaching for those.
 ## Concepts, quickly
 
 - **round**: one full cycle. Select clients, local update, clip, aggregate,
+  optionally add DP noise, step the global model.
+- **non-IID**: clients hold skewed label mixes. federift produces this with a
+  Dirichlet(alpha) prior; small alpha means extreme skew (a client may own one
+  class), large alpha approaches IID. The `partition` subcommand prints a
+  per-client `skew` score (0 uniform, 1 single class) so you can see what alpha
+  bought you.
+- **clipping (C)**: each client update is projected to L2 norm at or below
+  `clip_norm` before it leaves. This bounds any single client's influence and
