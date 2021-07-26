@@ -209,3 +209,10 @@ plain language.
    aggregation dynamics, non-IID skew, and drop behaviour, and nothing more.
 3. **The leakage metrics are heuristics, not attacks.** Distinguishability and
    cosine leak are intuition-builders. They are not calibrated attack success
+   rates and should not be read as such.
+4. **The network model is a toy.** Independent per-client latency and drop
+   draws, no shared congestion, no TCP, no real topology graph. It teaches the
+   shape of stragglers and partitions, not their true statistics.
+5. **Determinism over realism.** Everything is seeded so runs reproduce
+   exactly. That is great for teaching and a poor model of a chaotic real
+   network.
