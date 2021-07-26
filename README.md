@@ -232,3 +232,11 @@ federift is the sketch you draw before reaching for those.
   bought you.
 - **clipping (C)**: each client update is projected to L2 norm at or below
   `clip_norm` before it leaves. This bounds any single client's influence and
+  is the precondition that makes the Gaussian noise calibration meaningful.
+- **sigma**: the DP noise multiplier. Server-side Gaussian noise of scale
+  `sigma * clip_norm` is added to the aggregate. `sigma = 0` is the non-private
+  baseline, and federift says so.
+- **trimmed mean, beta**: a robustness knob. With `aggregator: "trimmed"` and
+  `trim_beta: 0.2`, the top and bottom 20 percent of values are dropped per
+  coordinate before averaging, cheap insurance against a few wild updates.
+- **deadline**: the Go engine marks any client whose simulated latency exceeds
