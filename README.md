@@ -201,3 +201,11 @@ plain language.
    closed-form sufficient conditions (the Dwork and Roth Gaussian-mechanism
    bound, plus naive and advanced composition). They are loose. Real
    deployments use an RDP, PLD, or moments accountant that gives far tighter,
+   and differently shaped, guarantees. Do not quote federift's epsilon anywhere
+   that matters.
+2. **The clients do not learn anything real.** There is no dataset, no loss
+   surface, no gradient of a real model. A client update is a deterministic
+   pull toward a fixed pseudo-random target vector. This is enough to study
+   aggregation dynamics, non-IID skew, and drop behaviour, and nothing more.
+3. **The leakage metrics are heuristics, not attacks.** Distinguishability and
+   cosine leak are intuition-builders. They are not calibrated attack success
