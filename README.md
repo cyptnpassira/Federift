@@ -216,3 +216,11 @@ plain language.
 5. **Determinism over realism.** Everything is seeded so runs reproduce
    exactly. That is great for teaching and a poor model of a chaotic real
    network.
+
+If you want the real thing: read the FedAvg paper (McMahan et al. 2017), the
+DP-SGD paper (Abadi et al. 2016), and use a maintained DP accounting library.
+federift is the sketch you draw before reaching for those.
+
+## Concepts, quickly
+
+- **round**: one full cycle. Select clients, local update, clip, aggregate,
