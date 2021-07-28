@@ -248,3 +248,11 @@ federift is the sketch you draw before reaching for those.
 Because the two halves only agree on JSON, extension is local:
 
 - **New aggregator?** Add a function to `federift/aggregate.py` and a branch in
+  `simulator._aggregate`. The Go side never needs to know.
+- **New network effect?** Add a field under `network` in a scenario and read it
+  in `topology/engine`. Python ignores it.
+- **Different client dynamics?** Rewrite `Client.local_update`. Everything
+  downstream (clipping, aggregation, leakage) is agnostic to how the delta was
+  produced, as long as it is a `list[float]` of the right dimension.
+- **Tighter privacy accounting?** `privacy.account` is the single seam. Swap
+  the closed-form bound for a real accountant and every report updates. Doing
