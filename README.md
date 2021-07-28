@@ -256,3 +256,11 @@ Because the two halves only agree on JSON, extension is local:
   produced, as long as it is a `list[float]` of the right dimension.
 - **Tighter privacy accounting?** `privacy.account` is the single seam. Swap
   the closed-form bound for a real accountant and every report updates. Doing
+  this properly is exactly the exercise federift is trying to motivate.
+
+The design rule: the scenario file is the only contract. If a change would
+force both languages to recompile in lockstep, it probably belongs on one side
+only.
+
+## Layout
+
