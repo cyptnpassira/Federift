@@ -240,3 +240,11 @@ federift is the sketch you draw before reaching for those.
   `trim_beta: 0.2`, the top and bottom 20 percent of values are dropped per
   coordinate before averaging, cheap insurance against a few wild updates.
 - **deadline**: the Go engine marks any client whose simulated latency exceeds
+  `deadline_ms` as effectively dropped. Stragglers routinely blow past it; that
+  is how a heavy latency tail turns into missing contributors.
+
+## Extending it
+
+Because the two halves only agree on JSON, extension is local:
+
+- **New aggregator?** Add a function to `federift/aggregate.py` and a branch in
