@@ -9,3 +9,4 @@ Checked items are shipped and runnable; unchecked items are future work.
 - [x] **M4 — Go topology handoff.** Latency, drops, stragglers, partitions, and shared traces consumed by Python.
 
 ## Planned / out of scope today
+- [ ] Production RDP/PLD privacy accounting.
