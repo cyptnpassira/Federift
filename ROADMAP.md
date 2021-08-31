@@ -8,3 +8,4 @@ Checked items are shipped and runnable; unchecked items are future work.
 - [x] **M3 — Privacy diagnostics.** Clearly labelled approximate DP accounting and leakage heuristics.
 - [x] **M4 — Go topology handoff.** Latency, drops, stragglers, partitions, and shared traces consumed by Python.
 
+## Planned / out of scope today
