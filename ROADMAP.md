@@ -10,3 +10,4 @@ Checked items are shipped and runnable; unchecked items are future work.
 
 ## Planned / out of scope today
 - [ ] Production RDP/PLD privacy accounting.
+- [ ] Real model training and calibrated privacy attacks.
