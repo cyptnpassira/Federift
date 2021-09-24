@@ -4,3 +4,5 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "federift"
+version = "0.5.0"
+description = "Educational federated-learning network and privacy simulator (Python core + Go topology engine)"
