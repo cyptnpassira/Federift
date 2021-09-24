@@ -8,3 +8,4 @@ version = "0.5.0"
 description = "Educational federated-learning network and privacy simulator (Python core + Go topology engine)"
 readme = "README.md"
 requires-python = ">=3.9"
+license = { text = "MIT" }
