@@ -9,3 +9,5 @@ description = "Educational federated-learning network and privacy simulator (Pyt
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
+authors = [{ name = "Federift contributors" }]
+keywords = ["federated-learning", "simulation", "differential-privacy", "education", "networking"]
