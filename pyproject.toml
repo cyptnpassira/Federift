@@ -13,3 +13,4 @@ authors = [{ name = "Federift contributors" }]
 keywords = ["federated-learning", "simulation", "differential-privacy", "education", "networking"]
 classifiers = [
     "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
