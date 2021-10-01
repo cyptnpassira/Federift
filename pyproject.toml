@@ -14,3 +14,5 @@ keywords = ["federated-learning", "simulation", "differential-privacy", "educati
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
