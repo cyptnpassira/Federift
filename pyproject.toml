@@ -19,3 +19,5 @@ classifiers = [
     "Topic :: Scientific/Engineering",
     "Topic :: Education",
 ]
+dependencies = []
+
