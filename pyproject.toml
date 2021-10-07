@@ -22,3 +22,5 @@ classifiers = [
 dependencies = []
 
 [project.urls]
+Homepage = "https://example.invalid/federift"
+Repository = "https://example.invalid/federift"
