@@ -27,3 +27,5 @@ Repository = "https://example.invalid/federift"
 Changelog = "https://example.invalid/federift/blob/main/CHANGELOG.md"
 
 [project.scripts]
+federift = "federift.cli:main"
+
