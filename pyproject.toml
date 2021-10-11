@@ -26,3 +26,4 @@ Homepage = "https://example.invalid/federift"
 Repository = "https://example.invalid/federift"
 Changelog = "https://example.invalid/federift/blob/main/CHANGELOG.md"
 
+[project.scripts]
