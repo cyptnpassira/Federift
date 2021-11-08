@@ -7,3 +7,4 @@ proof. See the DISCLAIMER in ``README.md``.
 
 Core pieces:
 
+- :mod:`federift.vectors`      -- minimal pure-Python vector math
