@@ -11,3 +11,4 @@ Core pieces:
 - :mod:`federift.clients`      -- deterministic toy-vector clients
 - :mod:`federift.partition`    -- IID / non-IID data partitioning
 - :mod:`federift.aggregate`    -- FedAvg and trimmed-mean aggregation
+- :mod:`federift.privacy`      -- DP noise + rough accounting approximations
