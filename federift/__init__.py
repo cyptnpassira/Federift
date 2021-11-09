@@ -10,3 +10,4 @@ Core pieces:
 - :mod:`federift.vectors`      -- minimal pure-Python vector math
 - :mod:`federift.clients`      -- deterministic toy-vector clients
 - :mod:`federift.partition`    -- IID / non-IID data partitioning
+- :mod:`federift.aggregate`    -- FedAvg and trimmed-mean aggregation
