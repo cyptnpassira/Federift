@@ -12,3 +12,4 @@ Core pieces:
 - :mod:`federift.partition`    -- IID / non-IID data partitioning
 - :mod:`federift.aggregate`    -- FedAvg and trimmed-mean aggregation
 - :mod:`federift.privacy`      -- DP noise + rough accounting approximations
+- :mod:`federift.leakage`      -- membership / leakage heuristics
