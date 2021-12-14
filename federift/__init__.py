@@ -13,3 +13,4 @@ Core pieces:
 - :mod:`federift.aggregate`    -- FedAvg and trimmed-mean aggregation
 - :mod:`federift.privacy`      -- DP noise + rough accounting approximations
 - :mod:`federift.leakage`      -- membership / leakage heuristics
+- :mod:`federift.simulator`    -- ties the round loop together
