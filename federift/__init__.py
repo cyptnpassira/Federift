@@ -14,3 +14,5 @@ Core pieces:
 - :mod:`federift.privacy`      -- DP noise + rough accounting approximations
 - :mod:`federift.leakage`      -- membership / leakage heuristics
 - :mod:`federift.simulator`    -- ties the round loop together
+- :mod:`federift.scenario`     -- shared JSON scenario schema (Py <-> Go)
+- :mod:`federift.cli`          -- command line reports
