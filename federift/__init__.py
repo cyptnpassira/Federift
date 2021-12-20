@@ -16,3 +16,4 @@ Core pieces:
 - :mod:`federift.simulator`    -- ties the round loop together
 - :mod:`federift.scenario`     -- shared JSON scenario schema (Py <-> Go)
 - :mod:`federift.cli`          -- command line reports
+"""
