@@ -5,3 +5,7 @@
   ``beta`` fraction per dimension. A cheap Byzantine-robust baseline.
 
 All functions take a list of client deltas and return a single aggregated
+delta of the same dimension.
+"""
+
+from __future__ import annotations
