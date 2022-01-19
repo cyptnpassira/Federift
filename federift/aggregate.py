@@ -9,3 +9,6 @@ delta of the same dimension.
 """
 
 from __future__ import annotations
+
+import math
+from typing import List, Sequence
