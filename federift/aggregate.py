@@ -19,3 +19,6 @@ from .vectors import Vector
 
 def fedavg(deltas: Sequence[Sequence[float]], weights: Sequence[float]) -> Vector:
     return vectors.weighted_mean(deltas, weights)
+
+
+def uniform_mean(deltas: Sequence[Sequence[float]]) -> Vector:
