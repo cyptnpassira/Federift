@@ -22,3 +22,7 @@ def fedavg(deltas: Sequence[Sequence[float]], weights: Sequence[float]) -> Vecto
 
 
 def uniform_mean(deltas: Sequence[Sequence[float]]) -> Vector:
+    return vectors.mean(deltas)
+
+
+def trimmed_mean(deltas: Sequence[Sequence[float]], beta: float) -> Vector:
