@@ -16,3 +16,6 @@ from typing import List, Sequence
 from . import vectors
 from .vectors import Vector
 
+
+def fedavg(deltas: Sequence[Sequence[float]], weights: Sequence[float]) -> Vector:
+    return vectors.weighted_mean(deltas, weights)
