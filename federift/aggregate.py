@@ -29,3 +29,7 @@ def trimmed_mean(deltas: Sequence[Sequence[float]], beta: float) -> Vector:
     """Coordinate-wise trimmed mean.
 
     ``beta`` is the fraction trimmed from *each* tail. With ``k`` clients we
+    drop ``floor(beta*k)`` values from both the top and bottom per coordinate.
+    """
+    if not deltas:
+        raise ValueError("no deltas to aggregate")
