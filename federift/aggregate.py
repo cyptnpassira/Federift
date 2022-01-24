@@ -26,3 +26,6 @@ def uniform_mean(deltas: Sequence[Sequence[float]]) -> Vector:
 
 
 def trimmed_mean(deltas: Sequence[Sequence[float]], beta: float) -> Vector:
+    """Coordinate-wise trimmed mean.
+
+    ``beta`` is the fraction trimmed from *each* tail. With ``k`` clients we
