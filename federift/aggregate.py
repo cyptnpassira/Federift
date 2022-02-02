@@ -33,3 +33,6 @@ def trimmed_mean(deltas: Sequence[Sequence[float]], beta: float) -> Vector:
     """
     if not deltas:
         raise ValueError("no deltas to aggregate")
+    if not (0.0 <= beta < 0.5):
+        raise ValueError("beta must be in [0, 0.5)")
+    k = len(deltas)
