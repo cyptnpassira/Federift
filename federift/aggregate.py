@@ -36,3 +36,6 @@ def trimmed_mean(deltas: Sequence[Sequence[float]], beta: float) -> Vector:
     if not (0.0 <= beta < 0.5):
         raise ValueError("beta must be in [0, 0.5)")
     k = len(deltas)
+    dim = len(deltas[0])
+    trim = int(math.floor(beta * k))
+    out: Vector = vectors.zeros(dim)
