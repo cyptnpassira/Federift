@@ -46,3 +46,7 @@ def trimmed_mean(deltas: Sequence[Sequence[float]], beta: float) -> Vector:
     return out
 
 
+def krum_like(deltas: Sequence[Sequence[float]], drop: int) -> Vector:
+    """A simplified Multi-Krum-style selection.
+
+    Score each delta by the sum of squared distances to its ``k-drop-2``
