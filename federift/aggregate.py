@@ -39,3 +39,7 @@ def trimmed_mean(deltas: Sequence[Sequence[float]], beta: float) -> Vector:
     dim = len(deltas[0])
     trim = int(math.floor(beta * k))
     out: Vector = vectors.zeros(dim)
+    for j in range(dim):
+        column = sorted(d[j] for d in deltas)
+        kept = column[trim: k - trim] if k - 2 * trim > 0 else column
+        out[j] = math.fsum(kept) / len(kept)
