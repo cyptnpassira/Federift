@@ -50,3 +50,6 @@ def krum_like(deltas: Sequence[Sequence[float]], drop: int) -> Vector:
     """A simplified Multi-Krum-style selection.
 
     Score each delta by the sum of squared distances to its ``k-drop-2``
+    nearest neighbours, then average the ``k-drop`` lowest-scoring deltas.
+    Educational approximation, not the exact Krum guarantee.
+    """
