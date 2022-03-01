@@ -53,3 +53,7 @@ def krum_like(deltas: Sequence[Sequence[float]], drop: int) -> Vector:
     nearest neighbours, then average the ``k-drop`` lowest-scoring deltas.
     Educational approximation, not the exact Krum guarantee.
     """
+    k = len(deltas)
+    if k == 0:
+        raise ValueError("no deltas to aggregate")
+    keep = max(1, k - drop)
