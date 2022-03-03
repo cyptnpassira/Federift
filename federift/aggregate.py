@@ -57,3 +57,6 @@ def krum_like(deltas: Sequence[Sequence[float]], drop: int) -> Vector:
     if k == 0:
         raise ValueError("no deltas to aggregate")
     keep = max(1, k - drop)
+    m = max(1, k - drop - 2)
+    scores: List[float] = []
+    for i in range(k):
