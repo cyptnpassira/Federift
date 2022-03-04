@@ -60,3 +60,6 @@ def krum_like(deltas: Sequence[Sequence[float]], drop: int) -> Vector:
     m = max(1, k - drop - 2)
     scores: List[float] = []
     for i in range(k):
+        dists = sorted(
+            vectors.l2_distance(deltas[i], deltas[j]) ** 2
+            for j in range(k)
