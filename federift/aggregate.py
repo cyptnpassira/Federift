@@ -63,3 +63,7 @@ def krum_like(deltas: Sequence[Sequence[float]], drop: int) -> Vector:
         dists = sorted(
             vectors.l2_distance(deltas[i], deltas[j]) ** 2
             for j in range(k)
+            if j != i
+        )
+        scores.append(math.fsum(dists[:m]))
+    order = sorted(range(k), key=lambda i: scores[i])
