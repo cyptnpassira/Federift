@@ -20,3 +20,9 @@ import sys
 from typing import Dict, List, Optional
 
 from . import __version__, partition, privacy, scenario as scenario_mod, simulator
+
+_SCENARIO_DIR = os.path.join(os.path.dirname(__file__), "scenarios")
+
+
+def _load_trace(path: Optional[str]) -> Optional[Dict[int, List[int]]]:
+    if not path:
