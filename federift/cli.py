@@ -26,3 +26,9 @@ _SCENARIO_DIR = os.path.join(os.path.dirname(__file__), "scenarios")
 
 def _load_trace(path: Optional[str]) -> Optional[Dict[int, List[int]]]:
     if not path:
+        return None
+    with open(path, "r", encoding="utf-8") as fh:
+        data = json.load(fh)
+    # trace JSON: {"rounds": [{"round": 0, "reachable": [..]}, ...]}
+    trace: Dict[int, List[int]] = {}
+    for entry in data.get("rounds", []):
