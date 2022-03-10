@@ -32,3 +32,9 @@ def _load_trace(path: Optional[str]) -> Optional[Dict[int, List[int]]]:
     # trace JSON: {"rounds": [{"round": 0, "reachable": [..]}, ...]}
     trace: Dict[int, List[int]] = {}
     for entry in data.get("rounds", []):
+        trace[int(entry["round"])] = [int(x) for x in entry.get("reachable", [])]
+    return trace
+
+
+def _bar(value: float, width: int = 24, vmax: float = 1.0) -> str:
+    filled = int(round(min(value, vmax) / vmax * width)) if vmax > 0 else 0
