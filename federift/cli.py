@@ -49,3 +49,9 @@ def cmd_run(args: argparse.Namespace) -> int:
     if args.json:
         payload = {
             "summary": result.summary(),
+            "rounds": [vars(r) for r in result.rounds],
+        }
+        print(json.dumps(payload, indent=2))
+        return 0
+
+    print(f"federift run :: scenario='{sc.name}' seed={sc.seed}")
