@@ -55,3 +55,9 @@ def cmd_run(args: argparse.Namespace) -> int:
         return 0
 
     print(f"federift run :: scenario='{sc.name}' seed={sc.seed}")
+    print(f"  clients={sc.num_clients} rounds={sc.rounds} dim={sc.dim} "
+          f"aggregator={sc.aggregator} partition={sc.partition}")
+    if trace is not None:
+        print(f"  network trace: {len(trace)} rounds loaded from {args.trace}")
+    print("-" * 72)
+    print(f"{'rnd':>3} {'part':>4} {'drop':>4} {'step':>8} {'converge':>9}  leak-dist")
