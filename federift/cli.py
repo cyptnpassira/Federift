@@ -44,3 +44,8 @@ def _bar(value: float, width: int = 24, vmax: float = 1.0) -> str:
 def cmd_run(args: argparse.Namespace) -> int:
     sc = scenario_mod.load(args.scenario)
     trace = _load_trace(args.trace)
+    result = simulator.run(sc, network_trace=trace)
+
+    if args.json:
+        payload = {
+            "summary": result.summary(),
