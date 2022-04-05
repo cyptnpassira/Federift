@@ -67,3 +67,9 @@ def cmd_run(args: argparse.Namespace) -> int:
               f"{_bar(r.mean_distinguishability)}")
     print("-" * 72)
     print(f"final convergence (mean global->target L2): {result.final_convergence:.4f}")
+
+    if result.privacy_report:
+        pr = result.privacy_report
+        print("\nprivacy (APPROXIMATE -- not a guarantee):")
+        print(f"  sigma={pr['sigma']}  delta={pr['delta']}  rounds={pr['rounds']}")
+        print(f"  eps/round ~= {pr['eps_per_round']:.4f}")
