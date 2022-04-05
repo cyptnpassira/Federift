@@ -61,3 +61,9 @@ def cmd_run(args: argparse.Namespace) -> int:
         print(f"  network trace: {len(trace)} rounds loaded from {args.trace}")
     print("-" * 72)
     print(f"{'rnd':>3} {'part':>4} {'drop':>4} {'step':>8} {'converge':>9}  leak-dist")
+    for r in result.rounds:
+        print(f"{r.round_idx:>3} {r.participants:>4} {r.dropped:>4} "
+              f"{r.step_norm:>8.4f} {r.convergence:>9.4f}  "
+              f"{_bar(r.mean_distinguishability)}")
+    print("-" * 72)
+    print(f"final convergence (mean global->target L2): {result.final_convergence:.4f}")
