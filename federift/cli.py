@@ -73,3 +73,8 @@ def cmd_run(args: argparse.Namespace) -> int:
         print("\nprivacy (APPROXIMATE -- not a guarantee):")
         print(f"  sigma={pr['sigma']}  delta={pr['delta']}  rounds={pr['rounds']}")
         print(f"  eps/round ~= {pr['eps_per_round']:.4f}")
+        print(f"  eps total (naive)    ~= {pr['eps_total_naive']:.4f}")
+        print(f"  eps total (advanced) ~= {pr['eps_total_advanced']:.4f}")
+    else:
+        print("\nprivacy: sigma=0 -> no DP noise added (non-private baseline).")
+
