@@ -78,3 +78,9 @@ def cmd_run(args: argparse.Namespace) -> int:
     else:
         print("\nprivacy: sigma=0 -> no DP noise added (non-private baseline).")
 
+    if result.leakage_report:
+        lk = result.leakage_report
+        print("\nleakage heuristics (diagnostic only):")
+        print(f"  mean distinguishability = {lk['mean_distinguishability']:.4f}")
+        print(f"  max  distinguishability = {lk['max_distinguishability']:.4f}")
+        print(f"  mean cosine leak        = {lk['mean_cosine_leak']:.4f}")
