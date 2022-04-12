@@ -90,3 +90,9 @@ def cmd_run(args: argparse.Namespace) -> int:
 
 def cmd_privacy(args: argparse.Namespace) -> int:
     sc = scenario_mod.load(args.scenario)
+    if sc.sigma <= 0.0:
+        print("sigma <= 0: no noise, epsilon is unbounded (non-private).")
+        return 0
+    rep = privacy.account(sc.sigma, sc.clip_norm, sc.delta, sc.rounds)
+    print(json.dumps(rep.as_dict(), indent=2))
+    return 0
