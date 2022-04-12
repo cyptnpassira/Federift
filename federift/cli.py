@@ -84,3 +84,9 @@ def cmd_run(args: argparse.Namespace) -> int:
         print(f"  mean distinguishability = {lk['mean_distinguishability']:.4f}")
         print(f"  max  distinguishability = {lk['max_distinguishability']:.4f}")
         print(f"  mean cosine leak        = {lk['mean_cosine_leak']:.4f}")
+        print(f"  most-exposed client     = #{lk['most_exposed_client']}")
+    return 0
+
+
+def cmd_privacy(args: argparse.Namespace) -> int:
+    sc = scenario_mod.load(args.scenario)
