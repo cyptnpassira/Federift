@@ -119,3 +119,9 @@ def cmd_partition(args: argparse.Namespace) -> int:
 
 
 def cmd_scenarios(_args: argparse.Namespace) -> int:
+    if not os.path.isdir(_SCENARIO_DIR):
+        print("no bundled scenarios found.")
+        return 0
+    print("bundled scenarios:")
+    for name in sorted(os.listdir(_SCENARIO_DIR)):
+        if name.endswith(".json"):
