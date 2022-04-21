@@ -125,3 +125,9 @@ def cmd_scenarios(_args: argparse.Namespace) -> int:
     print("bundled scenarios:")
     for name in sorted(os.listdir(_SCENARIO_DIR)):
         if name.endswith(".json"):
+            path = os.path.join(_SCENARIO_DIR, name)
+            try:
+                sc = scenario_mod.load(path)
+                print(f"  {name:<28} {sc.name} "
+                      f"(clients={sc.num_clients}, rounds={sc.rounds}, "
+                      f"agg={sc.aggregator}, sigma={sc.sigma})")
