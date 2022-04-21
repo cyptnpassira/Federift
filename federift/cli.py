@@ -113,3 +113,9 @@ def cmd_partition(args: argparse.Namespace) -> int:
         total = sum(counts.values())
         print(f"client {cid:>3}: n={total:>5} skew={skew:5.3f}  {_bar(skew)}")
     avg = sum(partition.skew_index(c, sc.num_classes) for c in parts) / max(1, len(parts))
+    print("-" * 60)
+    print(f"mean skew index: {avg:.4f} (0=uniform, 1=single-class)")
+    return 0
+
+
+def cmd_scenarios(_args: argparse.Namespace) -> int:
