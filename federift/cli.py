@@ -107,3 +107,9 @@ def cmd_partition(args: argparse.Namespace) -> int:
             sc.num_clients, sc.num_samples, sc.num_classes, sc.alpha, sc.seed
         )
     print(f"partition='{sc.partition}' clients={sc.num_clients} classes={sc.num_classes}")
+    print("-" * 60)
+    for cid, counts in enumerate(parts):
+        skew = partition.skew_index(counts, sc.num_classes)
+        total = sum(counts.values())
+        print(f"client {cid:>3}: n={total:>5} skew={skew:5.3f}  {_bar(skew)}")
+    avg = sum(partition.skew_index(c, sc.num_classes) for c in parts) / max(1, len(parts))
