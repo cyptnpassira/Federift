@@ -96,3 +96,9 @@ def cmd_privacy(args: argparse.Namespace) -> int:
     rep = privacy.account(sc.sigma, sc.clip_norm, sc.delta, sc.rounds)
     print(json.dumps(rep.as_dict(), indent=2))
     return 0
+
+
+def cmd_partition(args: argparse.Namespace) -> int:
+    sc = scenario_mod.load(args.scenario)
+    if sc.partition == "iid":
+        parts = partition.iid_partition(sc.num_clients, sc.num_samples, sc.num_classes, sc.seed)
