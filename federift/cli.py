@@ -102,3 +102,8 @@ def cmd_partition(args: argparse.Namespace) -> int:
     sc = scenario_mod.load(args.scenario)
     if sc.partition == "iid":
         parts = partition.iid_partition(sc.num_clients, sc.num_samples, sc.num_classes, sc.seed)
+    else:
+        parts = partition.dirichlet_partition(
+            sc.num_clients, sc.num_samples, sc.num_classes, sc.alpha, sc.seed
+        )
+    print(f"partition='{sc.partition}' clients={sc.num_clients} classes={sc.num_classes}")
