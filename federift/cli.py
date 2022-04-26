@@ -142,3 +142,9 @@ def build_parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="command", required=True)
 
     pr = sub.add_parser("run", help="run a scenario")
+    pr.add_argument("scenario", help="path to scenario JSON")
+    pr.add_argument("--trace", help="optional Go-produced network trace JSON")
+    pr.add_argument("--json", action="store_true", help="emit JSON instead of text")
+    pr.set_defaults(func=cmd_run)
+
+    pp = sub.add_parser("privacy", help="print DP accounting approximation")
