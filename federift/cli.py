@@ -136,3 +136,9 @@ def cmd_scenarios(_args: argparse.Namespace) -> int:
     return 0
 
 
+def build_parser() -> argparse.ArgumentParser:
+    p = argparse.ArgumentParser(prog="federift", description=__doc__)
+    p.add_argument("--version", action="version", version=f"federift {__version__}")
+    sub = p.add_subparsers(dest="command", required=True)
+
+    pr = sub.add_parser("run", help="run a scenario")
