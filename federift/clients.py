@@ -6,3 +6,6 @@ model toward that target, plus optional per-client jitter. There is no real
 loss surface -- this is a systems/privacy teaching model, so we keep the
 dynamics analytic and reproducible.
 """
+
+from __future__ import annotations
+
