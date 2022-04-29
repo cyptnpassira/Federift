@@ -23,3 +23,6 @@ class Client:
     dim: int
     num_classes: int
     master_seed: int
+
+    @property
+    def num_samples(self) -> int:
