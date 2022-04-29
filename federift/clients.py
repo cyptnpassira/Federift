@@ -19,3 +19,7 @@ from .vectors import Vector
 @dataclass
 class Client:
     cid: int
+    counts: Dict[int, int]
+    dim: int
+    num_classes: int
+    master_seed: int
