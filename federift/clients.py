@@ -16,3 +16,6 @@ from . import rng, vectors
 from .vectors import Vector
 
 
+@dataclass
+class Client:
+    cid: int
