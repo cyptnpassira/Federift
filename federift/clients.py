@@ -26,3 +26,7 @@ class Client:
 
     @property
     def num_samples(self) -> int:
+        return sum(self.counts.values())
+
+    def target(self) -> Vector:
+        """Stable per-client target vector encoding its label distribution.
