@@ -30,3 +30,6 @@ class Client:
 
     def target(self) -> Vector:
         """Stable per-client target vector encoding its label distribution.
+
+        Each class contributes a fixed pseudo-random basis vector scaled by its
+        (normalised) frequency. Clients with similar label mixes end up with
