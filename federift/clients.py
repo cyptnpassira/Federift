@@ -33,3 +33,7 @@ class Client:
 
         Each class contributes a fixed pseudo-random basis vector scaled by its
         (normalised) frequency. Clients with similar label mixes end up with
+        similar targets -- which is exactly the correlation membership attacks
+        try to exploit.
+        """
+        total = self.num_samples or 1
