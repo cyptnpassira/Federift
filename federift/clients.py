@@ -43,3 +43,7 @@ class Client:
             if freq == 0.0:
                 continue
             basis = rng.gaussian_vector(
+                rng.stream(self.master_seed, "class-basis", cls), self.dim, 1.0
+            )
+            acc = vectors.add(acc, vectors.scale(basis, freq))
+        return acc
