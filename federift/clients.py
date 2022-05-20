@@ -47,3 +47,6 @@ class Client:
             )
             acc = vectors.add(acc, vectors.scale(basis, freq))
         return acc
+
+    def local_update(
+        self,
