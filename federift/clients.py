@@ -37,3 +37,6 @@ class Client:
         try to exploit.
         """
         total = self.num_samples or 1
+        acc = vectors.zeros(self.dim)
+        for cls in range(self.num_classes):
+            freq = self.counts.get(cls, 0) / total
