@@ -40,3 +40,6 @@ class Client:
         acc = vectors.zeros(self.dim)
         for cls in range(self.num_classes):
             freq = self.counts.get(cls, 0) / total
+            if freq == 0.0:
+                continue
+            basis = rng.gaussian_vector(
