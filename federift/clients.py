@@ -50,3 +50,7 @@ class Client:
 
     def local_update(
         self,
+        global_model: Vector,
+        lr: float,
+        jitter: float,
+        round_idx: int,
