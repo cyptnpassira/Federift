@@ -54,3 +54,6 @@ class Client:
         lr: float,
         jitter: float,
         round_idx: int,
+    ) -> Vector:
+        """Return the *delta* (update) this client would upload.
+
