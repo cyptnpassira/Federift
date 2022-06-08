@@ -57,3 +57,7 @@ class Client:
     ) -> Vector:
         """Return the *delta* (update) this client would upload.
 
+        delta = lr * (target - global) + noise
+        """
+        tgt = self.target()
+        pull = vectors.scale(vectors.sub(tgt, global_model), lr)
