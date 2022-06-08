@@ -61,3 +61,6 @@ class Client:
         """
         tgt = self.target()
         pull = vectors.scale(vectors.sub(tgt, global_model), lr)
+        if jitter > 0.0:
+            r = rng.stream(self.master_seed, "jitter", self.cid, round_idx)
+            noise = rng.gaussian_vector(r, self.dim, jitter)
