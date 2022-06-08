@@ -64,3 +64,7 @@ class Client:
         if jitter > 0.0:
             r = rng.stream(self.master_seed, "jitter", self.cid, round_idx)
             noise = rng.gaussian_vector(r, self.dim, jitter)
+            pull = vectors.add(pull, noise)
+        return pull
+
+
