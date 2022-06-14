@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360" font-family="'JetBrains Mono', ui-monospace, monospace" role="img" aria-labelledby="fd-topo-title fd-topo-desc">
+  <title id="fd-topo-title">federift fractured network topology</title>
+  <desc id="fd-topo-desc">A central aggregator ringed by client nodes. Update packets travel inward along the links. On a schedule, the left cluster is severed by a partition and its nodes fade to grey, then rejoin, while the right cluster keeps contributing.</desc>
+
+  <rect width="720" height="360" fill="#0b1622"/>
+  <text x="24" y="34" fill="#7dd3fc" font-size="18" letter-spacing="2">federift</text>
+  <text x="24" y="54" fill="#4a6b82" font-size="11">deterministic federated round: latency, drops, partitions</text>
+
+  <!-- links from aggregator (360,190) to clients -->
+  <g stroke="#1e3a52" stroke-width="1.6" fill="none">
+    <line x1="360" y1="190" x2="150" y2="110"/>
+    <line x1="360" y1="190" x2="150" y2="190"/>
+    <line x1="360" y1="190" x2="150" y2="270"/>
+    <line x1="360" y1="190" x2="250" y2="70"/>
+    <line x1="360" y1="190" x2="250" y2="310"/>
+    <line x1="360" y1="190" x2="470" y2="70"/>
+    <line x1="360" y1="190" x2="470" y2="310"/>
+    <line x1="360" y1="190" x2="570" y2="110"/>
+    <line x1="360" y1="190" x2="570" y2="190"/>
+    <line x1="360" y1="190" x2="570" y2="270"/>
+  </g>
+
+  <!-- update packets travelling inward (right cluster stays active) -->
+  <g fill="#2dd4bf">
+    <circle r="3.6">
+      <animateMotion dur="2.4s" begin="0.4s" repeatCount="indefinite" path="M570,270 L360,190"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2.4s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3.6">
+      <animateMotion dur="2.2s" begin="1.3s" repeatCount="indefinite" path="M470,70 L360,190"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" begin="1.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3.6">
+      <animateMotion dur="2.7s" begin="0.9s" repeatCount="indefinite" path="M570,110 L360,190"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2.7s" begin="0.9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- aggregator -->
+  <circle cx="360" cy="190" r="20" fill="#0ea5e9"/>
+  <circle cx="360" cy="190" r="20" fill="none" stroke="#7dd3fc" stroke-width="1.5">
+    <animate attributeName="r" values="20;29;20" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <text x="360" y="230" fill="#7dd3fc" font-size="10" text-anchor="middle">aggregator</text>
+
+  <!-- left cluster: fractures on schedule -->
+  <g fill="#38bdf8">
+    <g>
+      <circle cx="150" cy="110" r="9"/>
+      <circle cx="150" cy="190" r="9"/>
+      <circle cx="150" cy="270" r="9"/>
+      <circle cx="250" cy="70"  r="9"/>
+      <circle cx="250" cy="310" r="9"/>
+      <animate attributeName="fill" values="#38bdf8;#38bdf8;#3a4756;#3a4756;#38bdf8" keyTimes="0;0.35;0.45;0.75;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+    <!-- right cluster: stable -->
+    <circle cx="470" cy="70"  r="9"/>
+    <circle cx="470" cy="310" r="9"/>
+    <circle cx="570" cy="110" r="9"/>
+    <circle cx="570" cy="190" r="9"/>
+    <circle cx="570" cy="270" r="9"/>
+  </g>
+
+  <!-- partition seam sweeping the left links during the isolation window -->
+  <g stroke="#f43f5e" stroke-width="2.6" fill="none" opacity="0">
+    <path d="M300,60 L285,150 L305,150 L288,300"/>
+    <animate attributeName="opacity" values="0;0;0.95;0.95;0" keyTimes="0;0.35;0.45;0.72;0.78" dur="8s" repeatCount="indefinite"/>
+  </g>
+  <text x="150" y="300" fill="#f43f5e" font-size="10" text-anchor="middle" opacity="0">
+    partition window
+    <animate attributeName="opacity" values="0;0;0.9;0.9;0" keyTimes="0;0.35;0.45;0.72;0.78" dur="8s" repeatCount="indefinite"/>
+  </text>
+
+  <text x="696" y="344" fill="#4a6b82" font-size="10" text-anchor="end">isolated clients drop from the round, then rejoin</text>
