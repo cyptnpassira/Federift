@@ -1,0 +1,7 @@
+"""Membership / leakage heuristics.
+
+These are *diagnostic* signals, not attacks with formal guarantees. They ask a
+teaching question: "how distinguishable is a participating client's update
+from the crowd?" Higher distinguishability implies higher intuitive leakage
+risk. Adding DP noise should visibly reduce these signals.
+
