@@ -5,3 +5,6 @@ teaching question: "how distinguishable is a participating client's update
 from the crowd?" Higher distinguishability implies higher intuitive leakage
 risk. Adding DP noise should visibly reduce these signals.
 
+Two toy metrics:
+
+- ``update_distinguishability`` : how far each client delta sits from the mean
