@@ -8,3 +8,7 @@ risk. Adding DP noise should visibly reduce these signals.
 Two toy metrics:
 
 - ``update_distinguishability`` : how far each client delta sits from the mean
+  delta, normalised. A crude membership-inference proxy.
+- ``gradient_cosine_leak``      : mean absolute cosine similarity between a
+  client's raw delta and its own target -- how much the upload "points at" the
+  client's private data direction.
