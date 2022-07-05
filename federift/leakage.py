@@ -12,3 +12,6 @@ Two toy metrics:
 - ``gradient_cosine_leak``      : mean absolute cosine similarity between a
   client's raw delta and its own target -- how much the upload "points at" the
   client's private data direction.
+"""
+
+from __future__ import annotations
