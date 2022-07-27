@@ -31,3 +31,6 @@ def _cosine(a: Sequence[float], b: Sequence[float]) -> float:
         return 0.0
     return vectors.dot(a, b) / (na * nb)
 
+
+def update_distinguishability(deltas: Sequence[Vector]) -> List[float]:
+    """Per-client normalised distance from the aggregate delta (0..~1+)."""
