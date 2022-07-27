@@ -28,3 +28,6 @@ def _cosine(a: Sequence[float], b: Sequence[float]) -> float:
     na = vectors.norm(a)
     nb = vectors.norm(b)
     if na == 0.0 or nb == 0.0:
+        return 0.0
+    return vectors.dot(a, b) / (na * nb)
+
