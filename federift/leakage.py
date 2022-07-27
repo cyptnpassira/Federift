@@ -24,3 +24,7 @@ from . import vectors
 from .vectors import Vector
 
 
+def _cosine(a: Sequence[float], b: Sequence[float]) -> float:
+    na = vectors.norm(a)
+    nb = vectors.norm(b)
+    if na == 0.0 or nb == 0.0:
