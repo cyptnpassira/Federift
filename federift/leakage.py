@@ -37,3 +37,6 @@ def update_distinguishability(deltas: Sequence[Vector]) -> List[float]:
     if not deltas:
         return []
     center = vectors.mean(deltas)
+    dists = [vectors.l2_distance(d, center) for d in deltas]
+    spread = max(dists) or 1.0
+    return [d / spread for d in dists]
