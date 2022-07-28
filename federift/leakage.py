@@ -44,3 +44,6 @@ def update_distinguishability(deltas: Sequence[Vector]) -> List[float]:
 
 def gradient_cosine_leak(deltas: Sequence[Vector], targets: Sequence[Vector]) -> List[float]:
     """Absolute cosine alignment between each delta and its client target."""
+    return [abs(_cosine(d, t)) for d, t in zip(deltas, targets)]
+
+
