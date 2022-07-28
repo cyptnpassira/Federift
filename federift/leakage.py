@@ -40,3 +40,7 @@ def update_distinguishability(deltas: Sequence[Vector]) -> List[float]:
     dists = [vectors.l2_distance(d, center) for d in deltas]
     spread = max(dists) or 1.0
     return [d / spread for d in dists]
+
+
+def gradient_cosine_leak(deltas: Sequence[Vector], targets: Sequence[Vector]) -> List[float]:
+    """Absolute cosine alignment between each delta and its client target."""
