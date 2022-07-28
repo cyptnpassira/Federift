@@ -34,3 +34,6 @@ def _cosine(a: Sequence[float], b: Sequence[float]) -> float:
 
 def update_distinguishability(deltas: Sequence[Vector]) -> List[float]:
     """Per-client normalised distance from the aggregate delta (0..~1+)."""
+    if not deltas:
+        return []
+    center = vectors.mean(deltas)
