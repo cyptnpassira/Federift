@@ -47,3 +47,6 @@ def gradient_cosine_leak(deltas: Sequence[Vector], targets: Sequence[Vector]) ->
     return [abs(_cosine(d, t)) for d, t in zip(deltas, targets)]
 
 
+@dataclass
+class LeakageReport:
+    mean_distinguishability: float
