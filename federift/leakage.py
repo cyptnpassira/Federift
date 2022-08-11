@@ -50,3 +50,6 @@ def gradient_cosine_leak(deltas: Sequence[Vector], targets: Sequence[Vector]) ->
 @dataclass
 class LeakageReport:
     mean_distinguishability: float
+    max_distinguishability: float
+    mean_cosine_leak: float
+    most_exposed_client: int
