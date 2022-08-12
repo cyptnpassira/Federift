@@ -53,3 +53,6 @@ class LeakageReport:
     max_distinguishability: float
     mean_cosine_leak: float
     most_exposed_client: int
+
+    def as_dict(self) -> dict:
+        return {
