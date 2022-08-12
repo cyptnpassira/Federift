@@ -56,3 +56,7 @@ class LeakageReport:
 
     def as_dict(self) -> dict:
         return {
+            "mean_distinguishability": self.mean_distinguishability,
+            "max_distinguishability": self.max_distinguishability,
+            "mean_cosine_leak": self.mean_cosine_leak,
+            "most_exposed_client": self.most_exposed_client,
