@@ -63,3 +63,6 @@ class LeakageReport:
             "note": "Heuristic leakage signals; not a formal attack success rate.",
         }
 
+
+def summarize(deltas: Sequence[Vector], targets: Sequence[Vector]) -> LeakageReport:
+    dist = update_distinguishability(deltas)
