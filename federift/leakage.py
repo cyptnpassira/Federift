@@ -60,3 +60,6 @@ class LeakageReport:
             "max_distinguishability": self.max_distinguishability,
             "mean_cosine_leak": self.mean_cosine_leak,
             "most_exposed_client": self.most_exposed_client,
+            "note": "Heuristic leakage signals; not a formal attack success rate.",
+        }
+
