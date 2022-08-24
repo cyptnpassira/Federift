@@ -9,3 +9,8 @@ Two partitioners are provided:
 
 - ``iid_partition``       : shuffle and split evenly.
 - ``dirichlet_partition`` : Dirichlet(alpha) label skew, the standard knob for
+  non-IID federated benchmarks. Small alpha => extreme skew.
+"""
+
+from __future__ import annotations
+
