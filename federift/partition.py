@@ -23,3 +23,8 @@ from . import rng
 
 def _gamma_sample(r: random.Random, k: float) -> float:
     """Marsaglia-Tsang gamma sampler (shape k, scale 1). stdlib-only."""
+    if k < 1.0:
+        # boost: Gamma(k) = Gamma(k+1) * U^(1/k)
+        u = r.random()
+        return _gamma_sample(r, k + 1.0) * (u ** (1.0 / k))
+    d = k - 1.0 / 3.0
