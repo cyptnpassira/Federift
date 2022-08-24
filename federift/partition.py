@@ -28,3 +28,8 @@ def _gamma_sample(r: random.Random, k: float) -> float:
         u = r.random()
         return _gamma_sample(r, k + 1.0) * (u ** (1.0 / k))
     d = k - 1.0 / 3.0
+    c = 1.0 / math.sqrt(9.0 * d)
+    while True:
+        x = r.gauss(0.0, 1.0)
+        v = (1.0 + c * x) ** 3
+        if v <= 0:
