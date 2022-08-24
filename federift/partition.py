@@ -19,3 +19,7 @@ import random
 from typing import Dict, List
 
 from . import rng
+
+
+def _gamma_sample(r: random.Random, k: float) -> float:
+    """Marsaglia-Tsang gamma sampler (shape k, scale 1). stdlib-only."""
