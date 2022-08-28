@@ -42,3 +42,8 @@ def _gamma_sample(r: random.Random, k: float) -> float:
 
 
 def _dirichlet(r: random.Random, alpha: List[float]) -> List[float]:
+    samples = [_gamma_sample(r, a) for a in alpha]
+    total = sum(samples)
+    if total == 0:
+        return [1.0 / len(alpha)] * len(alpha)
+    return [s / total for s in samples]
