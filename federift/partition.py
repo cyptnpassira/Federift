@@ -33,3 +33,7 @@ def _gamma_sample(r: random.Random, k: float) -> float:
         x = r.gauss(0.0, 1.0)
         v = (1.0 + c * x) ** 3
         if v <= 0:
+            continue
+        u = r.random()
+        if u < 1.0 - 0.0331 * (x ** 4):
+            return d * v
