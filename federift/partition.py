@@ -37,3 +37,8 @@ def _gamma_sample(r: random.Random, k: float) -> float:
         u = r.random()
         if u < 1.0 - 0.0331 * (x ** 4):
             return d * v
+        if math.log(u) < 0.5 * x * x + d * (1.0 - v + math.log(v)):
+            return d * v
+
+
+def _dirichlet(r: random.Random, alpha: List[float]) -> List[float]:
