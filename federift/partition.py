@@ -47,3 +47,7 @@ def _dirichlet(r: random.Random, alpha: List[float]) -> List[float]:
     if total == 0:
         return [1.0 / len(alpha)] * len(alpha)
     return [s / total for s in samples]
+
+
+def iid_partition(
+    num_clients: int,
