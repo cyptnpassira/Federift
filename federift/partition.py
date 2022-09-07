@@ -51,3 +51,8 @@ def _dirichlet(r: random.Random, alpha: List[float]) -> List[float]:
 
 def iid_partition(
     num_clients: int,
+    num_samples: int,
+    num_classes: int,
+    master_seed: int,
+) -> List[Dict[int, int]]:
+    """Return per-client class-count dicts under an IID split."""
