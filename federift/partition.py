@@ -61,3 +61,7 @@ def iid_partition(
     r.shuffle(labels)
     per = num_samples // num_clients
     out: List[Dict[int, int]] = []
+    for c in range(num_clients):
+        start = c * per
+        end = num_samples if c == num_clients - 1 else start + per
+        counts: Dict[int, int] = {}
