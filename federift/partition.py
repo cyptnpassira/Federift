@@ -70,3 +70,7 @@ def iid_partition(
         out.append(counts)
     return out
 
+
+def dirichlet_partition(
+    num_clients: int,
+    num_samples: int,
