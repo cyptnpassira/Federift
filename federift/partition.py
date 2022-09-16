@@ -56,3 +56,8 @@ def iid_partition(
     master_seed: int,
 ) -> List[Dict[int, int]]:
     """Return per-client class-count dicts under an IID split."""
+    r = rng.stream(master_seed, "partition", "iid")
+    labels = [i % num_classes for i in range(num_samples)]
+    r.shuffle(labels)
+    per = num_samples // num_clients
+    out: List[Dict[int, int]] = []
