@@ -79,3 +79,8 @@ def dirichlet_partition(
     master_seed: int,
 ) -> List[Dict[int, int]]:
     """Non-IID label-skew partition via a Dirichlet(alpha) prior per client."""
+    r = rng.stream(master_seed, "partition", "dirichlet", alpha)
+    out: List[Dict[int, int]] = []
+    remaining = num_samples
+    for c in range(num_clients):
+        clients_left = num_clients - c
