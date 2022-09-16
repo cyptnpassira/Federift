@@ -65,3 +65,8 @@ def iid_partition(
         start = c * per
         end = num_samples if c == num_clients - 1 else start + per
         counts: Dict[int, int] = {}
+        for lab in labels[start:end]:
+            counts[lab] = counts.get(lab, 0) + 1
+        out.append(counts)
+    return out
+
