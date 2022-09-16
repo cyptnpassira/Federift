@@ -74,3 +74,8 @@ def iid_partition(
 def dirichlet_partition(
     num_clients: int,
     num_samples: int,
+    num_classes: int,
+    alpha: float,
+    master_seed: int,
+) -> List[Dict[int, int]]:
+    """Non-IID label-skew partition via a Dirichlet(alpha) prior per client."""
