@@ -88,3 +88,8 @@ def dirichlet_partition(
         remaining -= share
         props = _dirichlet(r, [alpha] * num_classes)
         counts: Dict[int, int] = {}
+        assigned = 0
+        for cls in range(num_classes):
+            n = int(round(props[cls] * share))
+            if n > 0:
+                counts[cls] = n
