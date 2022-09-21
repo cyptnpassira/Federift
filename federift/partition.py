@@ -93,3 +93,8 @@ def dirichlet_partition(
             n = int(round(props[cls] * share))
             if n > 0:
                 counts[cls] = n
+                assigned += n
+        # patch rounding drift onto the dominant class
+        if assigned != share and props:
+            dominant = max(range(num_classes), key=lambda k: props[k])
+            counts[dominant] = max(0, counts.get(dominant, 0) + (share - assigned))
