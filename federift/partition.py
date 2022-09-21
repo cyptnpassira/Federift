@@ -84,3 +84,7 @@ def dirichlet_partition(
     remaining = num_samples
     for c in range(num_clients):
         clients_left = num_clients - c
+        share = remaining // clients_left if clients_left > 0 else remaining
+        remaining -= share
+        props = _dirichlet(r, [alpha] * num_classes)
+        counts: Dict[int, int] = {}
