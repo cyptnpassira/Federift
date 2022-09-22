@@ -98,3 +98,7 @@ def dirichlet_partition(
         if assigned != share and props:
             dominant = max(range(num_classes), key=lambda k: props[k])
             counts[dominant] = max(0, counts.get(dominant, 0) + (share - assigned))
+        out.append(counts)
+    return out
+
+
