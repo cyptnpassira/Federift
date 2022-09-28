@@ -14,3 +14,8 @@ We model the standard DP-SGD-flavoured pipeline:
   2. add Gaussian noise N(0, (sigma*C)^2 * I) at the server,
   3. account for the (epsilon, delta) budget across rounds.
 """
+
+from __future__ import annotations
+
+import math
+from dataclasses import dataclass
