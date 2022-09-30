@@ -23,3 +23,8 @@ from typing import List
 
 from . import rng, vectors
 from .vectors import Vector
+
+
+def add_gaussian_noise(
+    vec: Vector,
+    clip_norm: float,
