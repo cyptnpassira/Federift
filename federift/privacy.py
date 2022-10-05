@@ -28,3 +28,8 @@ from .vectors import Vector
 def add_gaussian_noise(
     vec: Vector,
     clip_norm: float,
+    sigma: float,
+    master_seed: int,
+    round_idx: int,
+) -> Vector:
+    """Add N(0, (sigma*clip_norm)^2) noise to an already-aggregated vector."""
