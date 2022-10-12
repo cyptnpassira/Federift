@@ -33,3 +33,7 @@ def add_gaussian_noise(
     round_idx: int,
 ) -> Vector:
     """Add N(0, (sigma*clip_norm)^2) noise to an already-aggregated vector."""
+    if sigma <= 0.0:
+        return list(vec)
+    r = rng.stream(master_seed, "dp-noise", round_idx)
+    scale = sigma * clip_norm
