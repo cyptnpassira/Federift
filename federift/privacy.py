@@ -37,3 +37,8 @@ def add_gaussian_noise(
         return list(vec)
     r = rng.stream(master_seed, "dp-noise", round_idx)
     scale = sigma * clip_norm
+    noise = rng.gaussian_vector(r, len(vec), scale)
+    return vectors.add(vec, noise)
+
+
+def gaussian_mechanism_epsilon(sigma: float, delta: float) -> float:
