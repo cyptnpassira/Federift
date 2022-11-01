@@ -42,3 +42,8 @@ def add_gaussian_noise(
 
 
 def gaussian_mechanism_epsilon(sigma: float, delta: float) -> float:
+    """Single-release (eps, delta) bound for the Gaussian mechanism.
+
+    Uses the classic sufficient condition (Dwork & Roth, Appendix A):
+
+        sigma >= sqrt(2 ln(1.25/delta)) / eps   =>   (eps, delta)-DP
