@@ -47,3 +47,7 @@ def gaussian_mechanism_epsilon(sigma: float, delta: float) -> float:
     Uses the classic sufficient condition (Dwork & Roth, Appendix A):
 
         sigma >= sqrt(2 ln(1.25/delta)) / eps   =>   (eps, delta)-DP
+
+    Rearranged to solve for eps at unit L2-sensitivity. This is loose; modern
+    accountants give much tighter bounds.
+    """
