@@ -51,3 +51,8 @@ def gaussian_mechanism_epsilon(sigma: float, delta: float) -> float:
     Rearranged to solve for eps at unit L2-sensitivity. This is loose; modern
     accountants give much tighter bounds.
     """
+    if sigma <= 0.0:
+        return float("inf")
+    if not (0.0 < delta < 1.0):
+        raise ValueError("delta must be in (0,1)")
+    return math.sqrt(2.0 * math.log(1.25 / delta)) / sigma
