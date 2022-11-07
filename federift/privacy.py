@@ -61,3 +61,7 @@ def gaussian_mechanism_epsilon(sigma: float, delta: float) -> float:
 def naive_composition(eps_per_round: float, rounds: int) -> float:
     """Basic composition: epsilon adds linearly."""
     return eps_per_round * rounds
+
+
+def advanced_composition(eps_per_round: float, rounds: int, delta_prime: float) -> float:
+    """Advanced composition bound (Dwork-Rothblum-Vadhan).
