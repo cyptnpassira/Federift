@@ -65,3 +65,8 @@ def naive_composition(eps_per_round: float, rounds: int) -> float:
 
 def advanced_composition(eps_per_round: float, rounds: int, delta_prime: float) -> float:
     """Advanced composition bound (Dwork-Rothblum-Vadhan).
+
+    eps_total = sqrt(2 T ln(1/delta')) * eps + T * eps * (e^eps - 1)
+    """
+    if rounds <= 0:
+        return 0.0
