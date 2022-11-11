@@ -70,3 +70,7 @@ def advanced_composition(eps_per_round: float, rounds: int, delta_prime: float) 
     """
     if rounds <= 0:
         return 0.0
+    if not (0.0 < delta_prime < 1.0):
+        raise ValueError("delta_prime must be in (0,1)")
+    term1 = math.sqrt(2.0 * rounds * math.log(1.0 / delta_prime)) * eps_per_round
+    term2 = rounds * eps_per_round * (math.exp(eps_per_round) - 1.0)
