@@ -84,3 +84,7 @@ class PrivacyReport:
     delta: float
     rounds: int
     eps_per_round: float
+    eps_naive: float
+    eps_advanced: float
+
+    def as_dict(self) -> dict:
