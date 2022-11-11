@@ -74,3 +74,8 @@ def advanced_composition(eps_per_round: float, rounds: int, delta_prime: float) 
         raise ValueError("delta_prime must be in (0,1)")
     term1 = math.sqrt(2.0 * rounds * math.log(1.0 / delta_prime)) * eps_per_round
     term2 = rounds * eps_per_round * (math.exp(eps_per_round) - 1.0)
+    return term1 + term2
+
+
+@dataclass
+class PrivacyReport:
