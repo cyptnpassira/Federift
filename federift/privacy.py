@@ -79,3 +79,8 @@ def advanced_composition(eps_per_round: float, rounds: int, delta_prime: float) 
 
 @dataclass
 class PrivacyReport:
+    sigma: float
+    clip_norm: float
+    delta: float
+    rounds: int
+    eps_per_round: float
