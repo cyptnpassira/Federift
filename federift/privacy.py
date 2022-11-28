@@ -93,3 +93,8 @@ class PrivacyReport:
             "clip_norm": self.clip_norm,
             "delta": self.delta,
             "rounds": self.rounds,
+            "eps_per_round": self.eps_per_round,
+            "eps_total_naive": self.eps_naive,
+            "eps_total_advanced": self.eps_advanced,
+            "note": "APPROXIMATE closed-form bounds; not a real accountant.",
+        }
