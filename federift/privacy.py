@@ -88,3 +88,8 @@ class PrivacyReport:
     eps_advanced: float
 
     def as_dict(self) -> dict:
+        return {
+            "sigma": self.sigma,
+            "clip_norm": self.clip_norm,
+            "delta": self.delta,
+            "rounds": self.rounds,
