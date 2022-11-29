@@ -98,3 +98,7 @@ class PrivacyReport:
             "eps_total_advanced": self.eps_advanced,
             "note": "APPROXIMATE closed-form bounds; not a real accountant.",
         }
+
+
+def account(sigma: float, clip_norm: float, delta: float, rounds: int) -> PrivacyReport:
+    eps_round = gaussian_mechanism_epsilon(sigma, delta)
