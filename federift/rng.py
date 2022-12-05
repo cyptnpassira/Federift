@@ -5,3 +5,5 @@ seeded and reproducible. A single master seed fans out into per-client and
 per-round sub-streams via stable string keys.
 """
 
+from __future__ import annotations
+
