@@ -12,3 +12,4 @@ import random
 from typing import List
 
 
+def derive_seed(master: int, *parts: object) -> int:
