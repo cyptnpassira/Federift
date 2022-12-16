@@ -20,3 +20,4 @@ def derive_seed(master: int, *parts: object) -> int:
 
 
 def stream(master: int, *parts: object) -> random.Random:
+    return random.Random(derive_seed(master, *parts))
