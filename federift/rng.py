@@ -17,3 +17,4 @@ def derive_seed(master: int, *parts: object) -> int:
     key = "::".join([str(master)] + [str(p) for p in parts])
     digest = hashlib.sha256(key.encode("utf-8")).digest()
     return int.from_bytes(digest[:8], "big") & 0x7FFFFFFFFFFFFFFF
+
