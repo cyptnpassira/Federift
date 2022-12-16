@@ -15,3 +15,4 @@ from typing import List
 def derive_seed(master: int, *parts: object) -> int:
     """Derive a stable 63-bit seed from a master seed and label parts."""
     key = "::".join([str(master)] + [str(p) for p in parts])
+    digest = hashlib.sha256(key.encode("utf-8")).digest()
