@@ -16,3 +16,7 @@ from typing import Any, Dict
 
 @dataclass
 class Scenario:
+    name: str
+    seed: int
+    federation: Dict[str, Any] = field(default_factory=dict)
+    privacy: Dict[str, Any] = field(default_factory=dict)
