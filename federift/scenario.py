@@ -25,3 +25,7 @@ class Scenario:
 
     # ---- federation getters (with defaults) --------------------------------
     @property
+    def num_clients(self) -> int:
+        return int(self.federation.get("num_clients", 10))
+
+    @property
