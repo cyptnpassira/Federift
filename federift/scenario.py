@@ -29,3 +29,7 @@ class Scenario:
         return int(self.federation.get("num_clients", 10))
 
     @property
+    def rounds(self) -> int:
+        return int(self.federation.get("rounds", 20))
+
+    @property
