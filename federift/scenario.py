@@ -20,3 +20,8 @@ class Scenario:
     seed: int
     federation: Dict[str, Any] = field(default_factory=dict)
     privacy: Dict[str, Any] = field(default_factory=dict)
+    network: Dict[str, Any] = field(default_factory=dict)
+    raw: Dict[str, Any] = field(default_factory=dict)
+
+    # ---- federation getters (with defaults) --------------------------------
+    @property
