@@ -37,3 +37,8 @@ class Scenario:
         return int(self.federation.get("dim", 16))
 
     @property
+    def num_classes(self) -> int:
+        return int(self.federation.get("num_classes", 10))
+
+    @property
+    def num_samples(self) -> int:
