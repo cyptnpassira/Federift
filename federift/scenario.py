@@ -33,3 +33,7 @@ class Scenario:
         return int(self.federation.get("rounds", 20))
 
     @property
+    def dim(self) -> int:
+        return int(self.federation.get("dim", 16))
+
+    @property
