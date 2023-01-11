@@ -50,3 +50,7 @@ class Scenario:
 
     @property
     def alpha(self) -> float:
+        return float(self.federation.get("alpha", 0.5))
+
+    @property
+    def clients_per_round(self) -> int:
