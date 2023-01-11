@@ -42,3 +42,7 @@ class Scenario:
 
     @property
     def num_samples(self) -> int:
+        return int(self.federation.get("num_samples", 5000))
+
+    @property
+    def partition(self) -> str:
