@@ -54,3 +54,7 @@ class Scenario:
 
     @property
     def clients_per_round(self) -> int:
+        return int(self.federation.get("clients_per_round", self.num_clients))
+
+    @property
+    def lr(self) -> float:
