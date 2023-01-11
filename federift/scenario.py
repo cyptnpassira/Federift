@@ -46,3 +46,7 @@ class Scenario:
 
     @property
     def partition(self) -> str:
+        return str(self.federation.get("partition", "dirichlet"))
+
+    @property
+    def alpha(self) -> float:
