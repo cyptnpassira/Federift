@@ -71,3 +71,7 @@ class Scenario:
     @property
     def trim_beta(self) -> float:
         return float(self.federation.get("trim_beta", 0.1))
+
+    # ---- privacy getters ---------------------------------------------------
+    @property
+    def clip_norm(self) -> float:
