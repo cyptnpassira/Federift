@@ -67,3 +67,7 @@ class Scenario:
     @property
     def aggregator(self) -> str:
         return str(self.federation.get("aggregator", "fedavg"))
+
+    @property
+    def trim_beta(self) -> float:
+        return float(self.federation.get("trim_beta", 0.1))
