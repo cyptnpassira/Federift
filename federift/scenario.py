@@ -80,3 +80,7 @@ class Scenario:
     @property
     def sigma(self) -> float:
         return float(self.privacy.get("sigma", 0.0))
+
+    @property
+    def delta(self) -> float:
+        return float(self.privacy.get("delta", 1e-5))
