@@ -75,3 +75,8 @@ class Scenario:
     # ---- privacy getters ---------------------------------------------------
     @property
     def clip_norm(self) -> float:
+        return float(self.privacy.get("clip_norm", 1.0))
+
+    @property
+    def sigma(self) -> float:
+        return float(self.privacy.get("sigma", 0.0))
