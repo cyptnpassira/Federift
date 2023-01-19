@@ -63,3 +63,7 @@ class Scenario:
     @property
     def jitter(self) -> float:
         return float(self.federation.get("jitter", 0.05))
+
+    @property
+    def aggregator(self) -> str:
+        return str(self.federation.get("aggregator", "fedavg"))
