@@ -84,3 +84,7 @@ class Scenario:
     @property
     def delta(self) -> float:
         return float(self.privacy.get("delta", 1e-5))
+
+
+def load(path: str) -> Scenario:
+    with open(path, "r", encoding="utf-8") as fh:
