@@ -58,3 +58,8 @@ class Scenario:
 
     @property
     def lr(self) -> float:
+        return float(self.federation.get("lr", 0.5))
+
+    @property
+    def jitter(self) -> float:
+        return float(self.federation.get("jitter", 0.05))
