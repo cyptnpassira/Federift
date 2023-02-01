@@ -2,3 +2,5 @@
   "name": "baseline-iid",
   "seed": 20260901,
   "federation": {
+    "num_clients": 12,
+    "rounds": 25,
