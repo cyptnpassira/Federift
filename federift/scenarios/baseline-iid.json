@@ -5,3 +5,5 @@
     "num_clients": 12,
     "rounds": 25,
     "dim": 16,
+    "num_classes": 10,
+    "num_samples": 6000,
