@@ -4,3 +4,4 @@
   "federation": {
     "num_clients": 12,
     "rounds": 25,
+    "dim": 16,
