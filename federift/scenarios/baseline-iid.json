@@ -7,3 +7,4 @@
     "dim": 16,
     "num_classes": 10,
     "num_samples": 6000,
+    "partition": "iid",
