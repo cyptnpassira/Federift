@@ -8,3 +8,5 @@
     "num_classes": 10,
     "num_samples": 6000,
     "partition": "iid",
+    "clients_per_round": 8,
+    "lr": 0.5,
