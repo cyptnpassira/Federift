@@ -11,3 +11,5 @@
     "clients_per_round": 8,
     "lr": 0.5,
     "jitter": 0.03,
+    "aggregator": "fedavg",
+    "trim_beta": 0.1
