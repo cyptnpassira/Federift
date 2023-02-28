@@ -13,3 +13,4 @@
     "jitter": 0.03,
     "aggregator": "fedavg",
     "trim_beta": 0.1
+  },
