@@ -14,3 +14,5 @@
     "aggregator": "fedavg",
     "trim_beta": 0.1
   },
+  "privacy": {
+    "clip_norm": 1.0,
