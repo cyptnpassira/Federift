@@ -102,3 +102,17 @@ def dirichlet_partition(
     return out
 
 
+def skew_index(counts: Dict[int, int], num_classes: int) -> float:
+    """Return a 0..1 skew score (0 = uniform over classes, ~1 = single class).
+
+    Computed as normalised entropy deficit.
+    """
+    total = sum(counts.values())
+    if total == 0 or num_classes <= 1:
+        return 0.0
+    entropy = 0.0
+    for cls in range(num_classes):
+        p = counts.get(cls, 0) / total
+        if p > 0:
+            entropy -= p * math.log(p)
+    max_entropy = math.log(num_classes)
