@@ -17,3 +17,5 @@
   "privacy": {
     "clip_norm": 1.0,
     "sigma": 0.0,
+    "delta": 1e-5
+  },
