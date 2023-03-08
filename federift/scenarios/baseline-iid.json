@@ -19,3 +19,4 @@
     "sigma": 0.0,
     "delta": 1e-5
   },
+  "network": {
