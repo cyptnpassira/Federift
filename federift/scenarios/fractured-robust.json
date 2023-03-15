@@ -5,3 +5,4 @@
     "num_clients": 24,
     "rounds": 50,
     "dim": 32,
+    "num_classes": 12,
