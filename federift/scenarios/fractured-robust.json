@@ -6,3 +6,5 @@
     "rounds": 50,
     "dim": 32,
     "num_classes": 12,
+    "num_samples": 12000,
+    "partition": "dirichlet",
