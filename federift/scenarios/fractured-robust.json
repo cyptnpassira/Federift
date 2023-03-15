@@ -3,3 +3,5 @@
   "seed": 424242,
   "federation": {
     "num_clients": 24,
+    "rounds": 50,
+    "dim": 32,
