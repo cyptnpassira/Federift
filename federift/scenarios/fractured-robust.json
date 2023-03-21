@@ -10,3 +10,5 @@
     "partition": "dirichlet",
     "alpha": 0.05,
     "clients_per_round": 12,
+    "lr": 0.35,
+    "jitter": 0.08,
