@@ -8,3 +8,5 @@
     "num_classes": 12,
     "num_samples": 12000,
     "partition": "dirichlet",
+    "alpha": 0.05,
+    "clients_per_round": 12,
