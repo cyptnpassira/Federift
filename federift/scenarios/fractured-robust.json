@@ -13,3 +13,5 @@
     "lr": 0.35,
     "jitter": 0.08,
     "aggregator": "trimmed",
+    "trim_beta": 0.2
+  },
