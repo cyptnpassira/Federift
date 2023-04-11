@@ -17,3 +17,4 @@
   },
   "privacy": {
     "clip_norm": 0.8,
+    "sigma": 0.7,
