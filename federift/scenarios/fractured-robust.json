@@ -27,3 +27,5 @@
     "straggler_prob": 0.2,
     "straggler_extra_ms": 1200,
     "deadline_ms": 500,
+    "partitions": [
+      { "round_start": 8,  "round_end": 14, "isolated": [0, 1, 2, 3, 4] },
