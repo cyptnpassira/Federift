@@ -25,3 +25,5 @@
     "jitter_ms": 25,
     "drop_prob": 0.1,
     "straggler_prob": 0.2,
+    "straggler_extra_ms": 1200,
+    "deadline_ms": 500,
