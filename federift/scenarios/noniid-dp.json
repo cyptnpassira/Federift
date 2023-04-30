@@ -1,3 +1,5 @@
 {
   "name": "noniid-dp",
   "seed": 777,
+  "federation": {
+    "num_clients": 20,
