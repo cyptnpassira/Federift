@@ -6,3 +6,4 @@
     "rounds": 40,
     "dim": 24,
     "num_classes": 10,
+    "num_samples": 10000,
