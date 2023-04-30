@@ -3,3 +3,4 @@
   "seed": 777,
   "federation": {
     "num_clients": 20,
+    "rounds": 40,
