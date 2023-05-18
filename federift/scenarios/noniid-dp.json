@@ -7,3 +7,5 @@
     "dim": 24,
     "num_classes": 10,
     "num_samples": 10000,
+    "partition": "dirichlet",
+    "alpha": 0.1,
