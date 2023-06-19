@@ -24,3 +24,5 @@
     "base_latency_ms": 35,
     "jitter_ms": 15,
     "drop_prob": 0.06,
+    "straggler_prob": 0.12,
+    "straggler_extra_ms": 700,
