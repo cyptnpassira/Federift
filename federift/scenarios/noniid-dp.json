@@ -22,3 +22,5 @@
   },
   "network": {
     "base_latency_ms": 35,
+    "jitter_ms": 15,
+    "drop_prob": 0.06,
