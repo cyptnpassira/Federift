@@ -21,3 +21,4 @@
     "delta": 1e-5
   },
   "network": {
+    "base_latency_ms": 35,
