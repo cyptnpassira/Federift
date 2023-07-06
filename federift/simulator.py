@@ -22,3 +22,9 @@ from typing import Dict, List, Optional
 
 from . import aggregate, clients, leakage, partition, privacy, rng, vectors
 from .scenario import Scenario
+from .vectors import Vector
+
+
+@dataclass
+class RoundStat:
+    round_idx: int
