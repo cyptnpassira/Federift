@@ -28,3 +28,9 @@ from .vectors import Vector
 @dataclass
 class RoundStat:
     round_idx: int
+    participants: int
+    global_norm: float
+    step_norm: float
+    convergence: float          # mean L2 distance global->client targets
+    mean_distinguishability: float
+    mean_cosine_leak: float
