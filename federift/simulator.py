@@ -34,3 +34,10 @@ class RoundStat:
     convergence: float          # mean L2 distance global->client targets
     mean_distinguishability: float
     mean_cosine_leak: float
+    dropped: int = 0
+
+
+@dataclass
+class SimResult:
+    scenario_name: str
+    rounds: List[RoundStat] = field(default_factory=list)
