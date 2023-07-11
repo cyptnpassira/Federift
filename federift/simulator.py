@@ -47,3 +47,9 @@ class SimResult:
 
     def summary(self) -> dict:
         return {
+            "scenario": self.scenario_name,
+            "num_rounds": len(self.rounds),
+            "final_convergence": self.final_convergence,
+            "privacy": self.privacy_report,
+            "leakage": self.leakage_report,
+        }
