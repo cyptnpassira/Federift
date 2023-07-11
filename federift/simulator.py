@@ -41,3 +41,9 @@ class RoundStat:
 class SimResult:
     scenario_name: str
     rounds: List[RoundStat] = field(default_factory=list)
+    privacy_report: Optional[dict] = None
+    final_convergence: float = 0.0
+    leakage_report: Optional[dict] = None
+
+    def summary(self) -> dict:
+        return {
