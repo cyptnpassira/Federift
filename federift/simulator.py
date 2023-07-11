@@ -53,3 +53,10 @@ class SimResult:
             "privacy": self.privacy_report,
             "leakage": self.leakage_report,
         }
+
+
+def _select(round_idx: int, n: int, k: int, seed: int) -> List[int]:
+    if k >= n:
+        return list(range(n))
+    r = rng.stream(seed, "select", round_idx)
+    return sorted(r.sample(range(n), k))
