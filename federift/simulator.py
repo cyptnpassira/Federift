@@ -60,3 +60,9 @@ def _select(round_idx: int, n: int, k: int, seed: int) -> List[int]:
         return list(range(n))
     r = rng.stream(seed, "select", round_idx)
     return sorted(r.sample(range(n), k))
+
+
+def _aggregate(name: str, deltas, weights, beta) -> Vector:
+    if name == "fedavg":
+        return aggregate.fedavg(deltas, weights)
+    if name == "uniform":
