@@ -66,3 +66,9 @@ def _aggregate(name: str, deltas, weights, beta) -> Vector:
     if name == "fedavg":
         return aggregate.fedavg(deltas, weights)
     if name == "uniform":
+        return aggregate.uniform_mean(deltas)
+    if name == "trimmed":
+        return aggregate.trimmed_mean(deltas, beta)
+    if name == "krum":
+        drop = max(1, int(round(beta * len(deltas))))
+        return aggregate.krum_like(deltas, drop)
