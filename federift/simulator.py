@@ -85,3 +85,9 @@ def run(
     produced by the Go engine's ``--emit-trace``). Unreachable selected clients
     are treated as dropped for that round.
     """
+    if scenario.partition == "iid":
+        parts = partition.iid_partition(
+            scenario.num_clients, scenario.num_samples, scenario.num_classes, scenario.seed
+        )
+    else:
+        parts = partition.dirichlet_partition(
