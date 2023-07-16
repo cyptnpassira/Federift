@@ -104,3 +104,9 @@ def run(
     global_model: Vector = vectors.zeros(scenario.dim)
     result = SimResult(scenario_name=scenario.name)
 
+    last_deltas: List[Vector] = []
+    last_targets: List[Vector] = []
+
+    for rnd in range(scenario.rounds):
+        selected = _select(rnd, scenario.num_clients, scenario.clients_per_round, scenario.seed)
+
