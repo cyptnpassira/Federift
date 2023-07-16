@@ -79,3 +79,9 @@ def run(
     scenario: Scenario,
     network_trace: Optional[Dict[int, List[int]]] = None,
 ) -> SimResult:
+    """Run the federated simulation for ``scenario``.
+
+    ``network_trace`` maps ``round_idx -> [reachable_client_ids]`` (typically
+    produced by the Go engine's ``--emit-trace``). Unreachable selected clients
+    are treated as dropped for that round.
+    """
