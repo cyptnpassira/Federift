@@ -72,3 +72,10 @@ def _aggregate(name: str, deltas, weights, beta) -> Vector:
     if name == "krum":
         drop = max(1, int(round(beta * len(deltas))))
         return aggregate.krum_like(deltas, drop)
+    raise ValueError(f"unknown aggregator: {name}")
+
+
+def run(
+    scenario: Scenario,
+    network_trace: Optional[Dict[int, List[int]]] = None,
+) -> SimResult:
