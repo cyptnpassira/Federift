@@ -91,3 +91,10 @@ def run(
         )
     else:
         parts = partition.dirichlet_partition(
+            scenario.num_clients,
+            scenario.num_samples,
+            scenario.num_classes,
+            scenario.alpha,
+            scenario.seed,
+        )
+
