@@ -98,3 +98,9 @@ def run(
             scenario.seed,
         )
 
+    clis = clients.build_clients(parts, scenario.dim, scenario.num_classes, scenario.seed)
+    targets = [c.target() for c in clis]
+
+    global_model: Vector = vectors.zeros(scenario.dim)
+    result = SimResult(scenario_name=scenario.name)
+
