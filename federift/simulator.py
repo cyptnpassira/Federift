@@ -110,3 +110,10 @@ def run(
     for rnd in range(scenario.rounds):
         selected = _select(rnd, scenario.num_clients, scenario.clients_per_round, scenario.seed)
 
+        dropped = 0
+        if network_trace is not None:
+            reachable = set(network_trace.get(rnd, list(range(scenario.num_clients))))
+            before = len(selected)
+            selected = [c for c in selected if c in reachable]
+            dropped = before - len(selected)
+
