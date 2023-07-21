@@ -117,3 +117,9 @@ def run(
             selected = [c for c in selected if c in reachable]
             dropped = before - len(selected)
 
+        if not selected:
+            # nobody reachable this round -> model unchanged
+            result.rounds.append(
+                RoundStat(rnd, 0, vectors.norm(global_model), 0.0,
+                          _convergence(global_model, targets), 0.0, 0.0, dropped)
+            )
