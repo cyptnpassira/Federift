@@ -123,3 +123,10 @@ def run(
                 RoundStat(rnd, 0, vectors.norm(global_model), 0.0,
                           _convergence(global_model, targets), 0.0, 0.0, dropped)
             )
+            continue
+
+        raw_deltas: List[Vector] = []
+        weights: List[float] = []
+        sel_targets: List[Vector] = []
+        for cid in selected:
+            c = clis[cid]
