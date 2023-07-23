@@ -136,3 +136,9 @@ def run(
             weights.append(float(c.num_samples))
             sel_targets.append(targets[cid])
 
+        agg = _aggregate(scenario.aggregator, raw_deltas, weights, scenario.trim_beta)
+        agg = privacy.add_gaussian_noise(
+            agg, scenario.clip_norm, scenario.sigma, scenario.seed, rnd
+        )
+
+        new_global = vectors.add(global_model, agg)
