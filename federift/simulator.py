@@ -130,3 +130,9 @@ def run(
         sel_targets: List[Vector] = []
         for cid in selected:
             c = clis[cid]
+            delta = c.local_update(global_model, scenario.lr, scenario.jitter, rnd)
+            delta = vectors.clip_l2(delta, scenario.clip_norm)
+            raw_deltas.append(delta)
+            weights.append(float(c.num_samples))
+            sel_targets.append(targets[cid])
+
