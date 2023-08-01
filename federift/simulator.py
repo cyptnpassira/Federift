@@ -142,3 +142,10 @@ def run(
         )
 
         new_global = vectors.add(global_model, agg)
+        step = vectors.l2_distance(new_global, global_model)
+        global_model = new_global
+
+        lk = leakage.summarize(raw_deltas, sel_targets)
+        result.rounds.append(
+            RoundStat(
+                round_idx=rnd,
