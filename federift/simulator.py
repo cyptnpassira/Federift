@@ -149,3 +149,9 @@ def run(
         result.rounds.append(
             RoundStat(
                 round_idx=rnd,
+                participants=len(selected),
+                global_norm=vectors.norm(global_model),
+                step_norm=step,
+                convergence=_convergence(global_model, targets),
+                mean_distinguishability=lk.mean_distinguishability,
+                mean_cosine_leak=lk.mean_cosine_leak,
