@@ -7,3 +7,7 @@ Vectors are plain ``list[float]``. Everything is deterministic.
 from __future__ import annotations
 
 import math
+from typing import Iterable, List, Sequence
+
+Vector = List[float]
+
