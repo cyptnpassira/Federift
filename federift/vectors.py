@@ -11,3 +11,7 @@ from typing import Iterable, List, Sequence
 
 Vector = List[float]
 
+
+def zeros(dim: int) -> Vector:
+    return [0.0] * dim
+
