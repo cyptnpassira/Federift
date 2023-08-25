@@ -19,3 +19,7 @@ def zeros(dim: int) -> Vector:
 def add(a: Sequence[float], b: Sequence[float]) -> Vector:
     _check(a, b)
     return [x + y for x, y in zip(a, b)]
+
+
+def sub(a: Sequence[float], b: Sequence[float]) -> Vector:
+    _check(a, b)
