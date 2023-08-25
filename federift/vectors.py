@@ -23,3 +23,7 @@ def add(a: Sequence[float], b: Sequence[float]) -> Vector:
 
 def sub(a: Sequence[float], b: Sequence[float]) -> Vector:
     _check(a, b)
+    return [x - y for x, y in zip(a, b)]
+
+
+def scale(a: Sequence[float], s: float) -> Vector:
