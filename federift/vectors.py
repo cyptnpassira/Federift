@@ -15,3 +15,7 @@ Vector = List[float]
 def zeros(dim: int) -> Vector:
     return [0.0] * dim
 
+
+def add(a: Sequence[float], b: Sequence[float]) -> Vector:
+    _check(a, b)
+    return [x + y for x, y in zip(a, b)]
