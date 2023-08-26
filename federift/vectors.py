@@ -27,3 +27,7 @@ def sub(a: Sequence[float], b: Sequence[float]) -> Vector:
 
 
 def scale(a: Sequence[float], s: float) -> Vector:
+    return [x * s for x in a]
+
+
+def dot(a: Sequence[float], b: Sequence[float]) -> float:
