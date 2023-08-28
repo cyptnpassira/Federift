@@ -46,3 +46,7 @@ def l2_distance(a: Sequence[float], b: Sequence[float]) -> float:
 
 def mean(vectors: Sequence[Sequence[float]]) -> Vector:
     if not vectors:
+        raise ValueError("cannot average an empty set of vectors")
+    dim = len(vectors[0])
+    acc = zeros(dim)
+    for v in vectors:
