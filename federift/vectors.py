@@ -54,3 +54,7 @@ def mean(vectors: Sequence[Sequence[float]]) -> Vector:
             raise ValueError("dimension mismatch in mean()")
         for i, x in enumerate(v):
             acc[i] += x
+    n = float(len(vectors))
+    return [x / n for x in acc]
+
+
