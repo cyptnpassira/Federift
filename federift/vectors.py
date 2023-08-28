@@ -31,3 +31,6 @@ def scale(a: Sequence[float], s: float) -> Vector:
 
 
 def dot(a: Sequence[float], b: Sequence[float]) -> float:
+    _check(a, b)
+    return math.fsum(x * y for x, y in zip(a, b))
+
