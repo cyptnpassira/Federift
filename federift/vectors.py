@@ -50,3 +50,7 @@ def mean(vectors: Sequence[Sequence[float]]) -> Vector:
     dim = len(vectors[0])
     acc = zeros(dim)
     for v in vectors:
+        if len(v) != dim:
+            raise ValueError("dimension mismatch in mean()")
+        for i, x in enumerate(v):
+            acc[i] += x
