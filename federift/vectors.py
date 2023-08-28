@@ -34,3 +34,7 @@ def dot(a: Sequence[float], b: Sequence[float]) -> float:
     _check(a, b)
     return math.fsum(x * y for x, y in zip(a, b))
 
+
+def norm(a: Sequence[float]) -> float:
+    return math.sqrt(math.fsum(x * x for x in a))
+
