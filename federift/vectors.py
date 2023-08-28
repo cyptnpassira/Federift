@@ -38,3 +38,7 @@ def dot(a: Sequence[float], b: Sequence[float]) -> float:
 def norm(a: Sequence[float]) -> float:
     return math.sqrt(math.fsum(x * x for x in a))
 
+
+def l2_distance(a: Sequence[float], b: Sequence[float]) -> float:
+    _check(a, b)
+    return math.sqrt(math.fsum((x - y) ** 2 for x, y in zip(a, b)))
