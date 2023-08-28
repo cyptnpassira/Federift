@@ -42,3 +42,7 @@ def norm(a: Sequence[float]) -> float:
 def l2_distance(a: Sequence[float], b: Sequence[float]) -> float:
     _check(a, b)
     return math.sqrt(math.fsum((x - y) ** 2 for x, y in zip(a, b)))
+
+
+def mean(vectors: Sequence[Sequence[float]]) -> Vector:
+    if not vectors:
