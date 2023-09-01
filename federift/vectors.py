@@ -58,3 +58,7 @@ def mean(vectors: Sequence[Sequence[float]]) -> Vector:
     return [x / n for x in acc]
 
 
+def weighted_mean(vectors: Sequence[Sequence[float]], weights: Sequence[float]) -> Vector:
+    if len(vectors) != len(weights):
+        raise ValueError("vectors/weights length mismatch")
+    if not vectors:
