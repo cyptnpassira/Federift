@@ -62,3 +62,7 @@ def weighted_mean(vectors: Sequence[Sequence[float]], weights: Sequence[float]) 
     if len(vectors) != len(weights):
         raise ValueError("vectors/weights length mismatch")
     if not vectors:
+        raise ValueError("cannot average an empty set")
+    total = math.fsum(weights)
+    if total <= 0:
+        raise ValueError("weights must sum to a positive number")
