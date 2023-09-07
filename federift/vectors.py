@@ -74,3 +74,7 @@ def weighted_mean(vectors: Sequence[Sequence[float]], weights: Sequence[float]) 
     return [x / total for x in acc]
 
 
+def clip_l2(a: Sequence[float], max_norm: float) -> Vector:
+    """Clip a vector to a maximum L2 norm (the classic DP-SGD clip)."""
+    n = norm(a)
+    if n <= max_norm or n == 0.0:
