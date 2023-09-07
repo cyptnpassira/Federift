@@ -66,3 +66,7 @@ def weighted_mean(vectors: Sequence[Sequence[float]], weights: Sequence[float]) 
     total = math.fsum(weights)
     if total <= 0:
         raise ValueError("weights must sum to a positive number")
+    dim = len(vectors[0])
+    acc = zeros(dim)
+    for v, w in zip(vectors, weights):
+        for i, x in enumerate(v):
