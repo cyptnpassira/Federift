@@ -70,3 +70,7 @@ def weighted_mean(vectors: Sequence[Sequence[float]], weights: Sequence[float]) 
     acc = zeros(dim)
     for v, w in zip(vectors, weights):
         for i, x in enumerate(v):
+            acc[i] += x * w
+    return [x / total for x in acc]
+
+
