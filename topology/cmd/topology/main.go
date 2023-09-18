@@ -8,3 +8,8 @@
 // Usage:
 //
 //	topology -scenario path.json                 # text report
+//	topology -scenario path.json -emit-trace out.json
+//	topology -scenario path.json -json           # full JSON round results
+//
+// stdlib only.
+package main
