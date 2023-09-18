@@ -13,3 +13,7 @@
 //
 // stdlib only.
 package main
+
+import (
+	"encoding/json"
+	"flag"
