@@ -26,3 +26,8 @@ import (
 )
 
 func main() {
+	scPath := flag.String("scenario", "", "path to shared scenario JSON (required)")
+	emitTrace := flag.String("emit-trace", "", "write reachability trace JSON to this path")
+	asJSON := flag.Bool("json", false, "print full round results as JSON")
+	flag.Parse()
+
