@@ -31,3 +31,7 @@ func main() {
 	asJSON := flag.Bool("json", false, "print full round results as JSON")
 	flag.Parse()
 
+	if *scPath == "" {
+		fmt.Fprintln(os.Stderr, "error: -scenario is required")
+		flag.Usage()
+		os.Exit(2)
