@@ -22,3 +22,7 @@ import (
 	"strings"
 
 	"github.com/cyptnpassira/Federift/topology/engine"
+	"github.com/cyptnpassira/Federift/topology/scenario"
+)
+
+func main() {
