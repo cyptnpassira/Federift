@@ -35,3 +35,8 @@ func main() {
 		fmt.Fprintln(os.Stderr, "error: -scenario is required")
 		flag.Usage()
 		os.Exit(2)
+	}
+
+	sc, err := scenario.Load(*scPath)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error: %v\n", err)
