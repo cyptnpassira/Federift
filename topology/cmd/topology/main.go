@@ -44,3 +44,8 @@ func main() {
 	}
 
 	rounds := engine.Run(sc)
+
+	if *emitTrace != "" {
+		trace := engine.BuildTrace(sc.Name, rounds)
+		if err := writeJSON(*emitTrace, trace); err != nil {
+			fmt.Fprintf(os.Stderr, "error writing trace: %v\n", err)
