@@ -66,3 +66,8 @@ func main() {
 
 func writeJSON(path string, v interface{}) error {
 	f, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	enc := json.NewEncoder(f)
