@@ -62,3 +62,7 @@ func main() {
 	}
 
 	printReport(sc, rounds)
+}
+
+func writeJSON(path string, v interface{}) error {
+	f, err := os.Create(path)
