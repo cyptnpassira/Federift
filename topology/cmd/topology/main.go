@@ -53,3 +53,8 @@ func main() {
 		}
 		fmt.Fprintf(os.Stderr, "wrote trace for %d rounds -> %s\n", len(rounds), *emitTrace)
 	}
+
+	if *asJSON {
+		enc := json.NewEncoder(os.Stdout)
+		enc.SetIndent("", "  ")
+		_ = enc.Encode(rounds)
