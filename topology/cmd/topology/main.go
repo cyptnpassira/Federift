@@ -71,3 +71,7 @@ func writeJSON(path string, v interface{}) error {
 	}
 	defer f.Close()
 	enc := json.NewEncoder(f)
+	enc.SetIndent("", "  ")
+	return enc.Encode(v)
+}
+
