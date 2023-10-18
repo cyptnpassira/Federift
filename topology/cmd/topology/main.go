@@ -58,3 +58,7 @@ func main() {
 		enc := json.NewEncoder(os.Stdout)
 		enc.SetIndent("", "  ")
 		_ = enc.Encode(rounds)
+		return
+	}
+
+	printReport(sc, rounds)
