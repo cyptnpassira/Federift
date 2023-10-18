@@ -75,3 +75,8 @@ func writeJSON(path string, v interface{}) error {
 	return enc.Encode(v)
 }
 
+func bar(frac float64, width int) string {
+	if frac < 0 {
+		frac = 0
+	}
+	if frac > 1 {
