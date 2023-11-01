@@ -17,3 +17,10 @@ import (
 type ClientResult struct {
 	Client    int     `json:"client"`
 	LatencyMs float64 `json:"latency_ms"`
+	Dropped   bool    `json:"dropped"`
+	Straggler bool    `json:"straggler"`
+	Isolated  bool    `json:"isolated"`
+	Reachable bool    `json:"reachable"`
+}
+
+// RoundResult aggregates a round.
