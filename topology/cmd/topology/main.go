@@ -84,3 +84,8 @@ func bar(frac float64, width int) string {
 	}
 	n := int(frac*float64(width) + 0.5)
 	return strings.Repeat("#", n) + strings.Repeat(".", width-n)
+}
+
+func printReport(sc *scenario.Scenario, rounds []engine.RoundResult) {
+	fmt.Printf("federift topology :: scenario='%s' seed=%d\n", sc.Name, sc.Seed)
+	fmt.Printf("  clients=%d rounds=%d per-round=%d deadline=%.0fms\n",
