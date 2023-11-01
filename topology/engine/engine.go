@@ -1,0 +1,19 @@
+// Package engine simulates a federated round's network behaviour: per-client
+// latency, random drops, straggler tails, and scheduled partitions. It is a
+// deterministic discrete simulation seeded from the scenario, so runs are
+// reproducible and can be diffed against the Python privacy core.
+package engine
+
+import (
+	"hash/fnv"
+	"math"
+	"math/rand"
+	"sort"
+
+	"github.com/cyptnpassira/Federift/topology/scenario"
+)
+
+// ClientResult is the outcome for one client in one round.
+type ClientResult struct {
+	Client    int     `json:"client"`
+	LatencyMs float64 `json:"latency_ms"`
