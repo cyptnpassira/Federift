@@ -89,3 +89,7 @@ func bar(frac float64, width int) string {
 func printReport(sc *scenario.Scenario, rounds []engine.RoundResult) {
 	fmt.Printf("federift topology :: scenario='%s' seed=%d\n", sc.Name, sc.Seed)
 	fmt.Printf("  clients=%d rounds=%d per-round=%d deadline=%.0fms\n",
+		sc.Federation.NumClients, sc.Federation.Rounds,
+		sc.Federation.ClientsPerRound, sc.Network.DeadlineMs)
+	fmt.Println(strings.Repeat("-", 72))
+	fmt.Printf("%3s %5s %6s %8s %8s  drop-rate\n", "rnd", "reach", "sel", "p50ms", "p95ms")
