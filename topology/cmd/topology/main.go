@@ -80,3 +80,7 @@ func bar(frac float64, width int) string {
 		frac = 0
 	}
 	if frac > 1 {
+		frac = 1
+	}
+	n := int(frac*float64(width) + 0.5)
+	return strings.Repeat("#", n) + strings.Repeat(".", width-n)
