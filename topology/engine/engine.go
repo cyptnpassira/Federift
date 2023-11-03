@@ -24,3 +24,11 @@ type ClientResult struct {
 }
 
 // RoundResult aggregates a round.
+type RoundResult struct {
+	Round     int            `json:"round"`
+	Selected  []int          `json:"selected"`
+	Reachable []int          `json:"reachable"`
+	Clients   []ClientResult `json:"clients"`
+	P50Ms     float64        `json:"p50_ms"`
+	P95Ms     float64        `json:"p95_ms"`
+	DropRate  float64        `json:"drop_rate"`
