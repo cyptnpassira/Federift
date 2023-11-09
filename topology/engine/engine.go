@@ -61,3 +61,10 @@ func subSeed(master int64, round, client int, label string) int64 {
 func putI64(b []byte, v int64) {
 	for i := 0; i < 8; i++ {
 		b[i] = byte(v >> (8 * i))
+	}
+}
+
+func isolatedSet(net scenario.Network, round int) map[int]bool {
+	set := map[int]bool{}
+	for _, p := range net.Partitions {
+		if round >= p.RoundStart && round < p.RoundEnd {
