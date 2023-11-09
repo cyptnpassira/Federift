@@ -39,3 +39,10 @@ type RoundResult struct {
 type TraceRound struct {
 	Round     int   `json:"round"`
 	Reachable []int `json:"reachable"`
+}
+
+type Trace struct {
+	Scenario string       `json:"scenario"`
+	Rounds   []TraceRound `json:"rounds"`
+}
+
