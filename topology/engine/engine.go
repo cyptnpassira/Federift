@@ -32,3 +32,10 @@ type RoundResult struct {
 	P50Ms     float64        `json:"p50_ms"`
 	P95Ms     float64        `json:"p95_ms"`
 	DropRate  float64        `json:"drop_rate"`
+}
+
+// Trace is the compact per-round reachability document consumed by the Python
+// simulator via `federift run --trace`.
+type TraceRound struct {
+	Round     int   `json:"round"`
+	Reachable []int `json:"reachable"`
