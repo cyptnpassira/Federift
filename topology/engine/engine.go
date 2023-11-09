@@ -53,3 +53,11 @@ func subSeed(master int64, round, client int, label string) int64 {
 	var buf [24]byte
 	putI64(buf[0:8], master)
 	putI64(buf[8:16], int64(round)<<20|int64(client))
+	_, _ = h.Write(buf[:16])
+	_, _ = h.Write([]byte(label))
+	return int64(h.Sum64() & 0x7FFFFFFFFFFFFFFF)
+}
+
+func putI64(b []byte, v int64) {
+	for i := 0; i < 8; i++ {
+		b[i] = byte(v >> (8 * i))
