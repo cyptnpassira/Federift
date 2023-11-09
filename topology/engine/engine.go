@@ -46,3 +46,10 @@ type Trace struct {
 	Rounds   []TraceRound `json:"rounds"`
 }
 
+// subSeed derives a stable per-(round,client,label) seed so each stochastic
+// draw is independent yet reproducible.
+func subSeed(master int64, round, client int, label string) int64 {
+	h := fnv.New64a()
+	var buf [24]byte
+	putI64(buf[0:8], master)
+	putI64(buf[8:16], int64(round)<<20|int64(client))
