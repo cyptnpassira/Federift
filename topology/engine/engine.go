@@ -68,3 +68,10 @@ func isolatedSet(net scenario.Network, round int) map[int]bool {
 	set := map[int]bool{}
 	for _, p := range net.Partitions {
 		if round >= p.RoundStart && round < p.RoundEnd {
+			for _, c := range p.Isolated {
+				set[c] = true
+			}
+		}
+	}
+	return set
+}
