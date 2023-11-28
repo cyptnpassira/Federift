@@ -75,3 +75,10 @@ func isolatedSet(net scenario.Network, round int) map[int]bool {
 	}
 	return set
 }
+
+// selectClients picks the round's participant set deterministically. It mirrors
+// the intent of the Python selector (a seeded sample) but the Go engine only
+// needs the set, not identical membership, since Python re-selects and then
+// intersects with the trace's reachable set.
+func selectClients(master int64, round, n, k int) []int {
+	if k >= n {
