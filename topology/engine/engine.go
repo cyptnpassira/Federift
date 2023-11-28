@@ -82,3 +82,11 @@ func isolatedSet(net scenario.Network, round int) map[int]bool {
 // intersects with the trace's reachable set.
 func selectClients(master int64, round, n, k int) []int {
 	if k >= n {
+		out := make([]int, n)
+		for i := range out {
+			out[i] = i
+		}
+		return out
+	}
+	r := rand.New(rand.NewSource(subSeed(master, round, -1, "select")))
+	perm := r.Perm(n)[:k]
