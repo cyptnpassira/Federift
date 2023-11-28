@@ -90,3 +90,10 @@ func selectClients(master int64, round, n, k int) []int {
 	}
 	r := rand.New(rand.NewSource(subSeed(master, round, -1, "select")))
 	perm := r.Perm(n)[:k]
+	sort.Ints(perm)
+	return perm
+}
+
+// RunRound simulates a single round.
+func RunRound(sc *scenario.Scenario, round int) RoundResult {
+	net := sc.Network
