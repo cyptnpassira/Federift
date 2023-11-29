@@ -97,3 +97,10 @@ func selectClients(master int64, round, n, k int) []int {
 // RunRound simulates a single round.
 func RunRound(sc *scenario.Scenario, round int) RoundResult {
 	net := sc.Network
+	iso := isolatedSet(net, round)
+	selected := selectClients(sc.Seed, round, sc.Federation.NumClients, sc.Federation.ClientsPerRound)
+
+	res := RoundResult{Round: round, Selected: selected}
+	var latencies []float64
+	dropped := 0
+
