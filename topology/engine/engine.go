@@ -111,3 +111,11 @@ func RunRound(sc *scenario.Scenario, round int) RoundResult {
 			cr.Isolated = true
 			cr.Dropped = true
 			cr.Reachable = false
+			res.Clients = append(res.Clients, cr)
+			dropped++
+			continue
+		}
+
+		rDrop := rand.New(rand.NewSource(subSeed(sc.Seed, round, c, "drop")))
+		if rDrop.Float64() < net.DropProb {
+			cr.Dropped = true
