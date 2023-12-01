@@ -104,3 +104,10 @@ func RunRound(sc *scenario.Scenario, round int) RoundResult {
 	var latencies []float64
 	dropped := 0
 
+	for _, c := range selected {
+		cr := ClientResult{Client: c}
+
+		if iso[c] {
+			cr.Isolated = true
+			cr.Dropped = true
+			cr.Reachable = false
