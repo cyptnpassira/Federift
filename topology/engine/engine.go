@@ -126,3 +126,10 @@ func RunRound(sc *scenario.Scenario, round int) RoundResult {
 		}
 
 		rLat := rand.New(rand.NewSource(subSeed(sc.Seed, round, c, "lat")))
+		lat := net.BaseLatencyMs + (rLat.Float64()*2-1)*net.JitterMs
+		if lat < 0 {
+			lat = 0
+		}
+
+		rStr := rand.New(rand.NewSource(subSeed(sc.Seed, round, c, "straggle")))
+		if rStr.Float64() < net.StragglerProb {
