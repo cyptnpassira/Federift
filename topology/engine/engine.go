@@ -141,3 +141,10 @@ func RunRound(sc *scenario.Scenario, round int) RoundResult {
 		// A client past the deadline is effectively dropped from aggregation.
 		if lat > net.DeadlineMs {
 			cr.Dropped = true
+			cr.Reachable = false
+			dropped++
+		} else {
+			cr.Reachable = true
+			latencies = append(latencies, lat)
+			res.Reachable = append(res.Reachable, c)
+		}
