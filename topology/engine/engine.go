@@ -148,3 +148,10 @@ func RunRound(sc *scenario.Scenario, round int) RoundResult {
 			latencies = append(latencies, lat)
 			res.Reachable = append(res.Reachable, c)
 		}
+		res.Clients = append(res.Clients, cr)
+	}
+
+	res.P50Ms = percentile(latencies, 0.50)
+	res.P95Ms = percentile(latencies, 0.95)
+	if len(selected) > 0 {
+		res.DropRate = float64(dropped) / float64(len(selected))
