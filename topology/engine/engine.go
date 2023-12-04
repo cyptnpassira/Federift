@@ -133,3 +133,11 @@ func RunRound(sc *scenario.Scenario, round int) RoundResult {
 
 		rStr := rand.New(rand.NewSource(subSeed(sc.Seed, round, c, "straggle")))
 		if rStr.Float64() < net.StragglerProb {
+			cr.Straggler = true
+			lat += net.StragglerExtraMs
+		}
+
+		cr.LatencyMs = lat
+		// A client past the deadline is effectively dropped from aggregation.
+		if lat > net.DeadlineMs {
+			cr.Dropped = true
