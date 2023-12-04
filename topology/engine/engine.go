@@ -119,3 +119,10 @@ func RunRound(sc *scenario.Scenario, round int) RoundResult {
 		rDrop := rand.New(rand.NewSource(subSeed(sc.Seed, round, c, "drop")))
 		if rDrop.Float64() < net.DropProb {
 			cr.Dropped = true
+			cr.Reachable = false
+			res.Clients = append(res.Clients, cr)
+			dropped++
+			continue
+		}
+
+		rLat := rand.New(rand.NewSource(subSeed(sc.Seed, round, c, "lat")))
