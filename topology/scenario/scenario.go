@@ -6,3 +6,6 @@ package scenario
 
 import (
 	"encoding/json"
+	"fmt"
+	"os"
+)
