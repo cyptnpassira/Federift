@@ -155,3 +155,10 @@ func RunRound(sc *scenario.Scenario, round int) RoundResult {
 	res.P95Ms = percentile(latencies, 0.95)
 	if len(selected) > 0 {
 		res.DropRate = float64(dropped) / float64(len(selected))
+	}
+	sort.Ints(res.Reachable)
+	return res
+}
+
+// Run simulates every round of the scenario.
+func Run(sc *scenario.Scenario) []RoundResult {
