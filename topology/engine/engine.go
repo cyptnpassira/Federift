@@ -162,3 +162,11 @@ func RunRound(sc *scenario.Scenario, round int) RoundResult {
 
 // Run simulates every round of the scenario.
 func Run(sc *scenario.Scenario) []RoundResult {
+	out := make([]RoundResult, 0, sc.Federation.Rounds)
+	for r := 0; r < sc.Federation.Rounds; r++ {
+		out = append(out, RunRound(sc, r))
+	}
+	return out
+}
+
+// BuildTrace converts full round results into the compact reachability trace.
