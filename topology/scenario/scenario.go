@@ -9,3 +9,6 @@ import (
 	"fmt"
 	"os"
 )
+
+// Partition describes a network split isolating a set of clients over a
+// contiguous range of rounds [RoundStart, RoundEnd).
