@@ -16,3 +16,6 @@ type Partition struct {
 	RoundStart int   `json:"round_start"`
 	RoundEnd   int   `json:"round_end"`
 	Isolated   []int `json:"isolated"`
+}
+
+// Network holds all topology-engine parameters.
