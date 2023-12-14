@@ -19,3 +19,7 @@ type Partition struct {
 }
 
 // Network holds all topology-engine parameters.
+type Network struct {
+	BaseLatencyMs    float64     `json:"base_latency_ms"`
+	JitterMs         float64     `json:"jitter_ms"`
+	DropProb         float64     `json:"drop_prob"`
