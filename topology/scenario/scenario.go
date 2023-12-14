@@ -12,3 +12,7 @@ import (
 
 // Partition describes a network split isolating a set of clients over a
 // contiguous range of rounds [RoundStart, RoundEnd).
+type Partition struct {
+	RoundStart int   `json:"round_start"`
+	RoundEnd   int   `json:"round_end"`
+	Isolated   []int `json:"isolated"`
