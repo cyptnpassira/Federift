@@ -23,3 +23,6 @@ type Network struct {
 	BaseLatencyMs    float64     `json:"base_latency_ms"`
 	JitterMs         float64     `json:"jitter_ms"`
 	DropProb         float64     `json:"drop_prob"`
+	StragglerProb    float64     `json:"straggler_prob"`
+	StragglerExtraMs float64     `json:"straggler_extra_ms"`
+	DeadlineMs       float64     `json:"deadline_ms"`
