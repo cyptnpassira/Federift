@@ -30,3 +30,6 @@ type Network struct {
 }
 
 // Federation carries just enough shape for the engine to know how many
+// clients/rounds to simulate. The privacy fields live here too but are unused
+// on the Go side.
+type Federation struct {
