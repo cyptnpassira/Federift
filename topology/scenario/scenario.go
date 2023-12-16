@@ -26,3 +26,7 @@ type Network struct {
 	StragglerProb    float64     `json:"straggler_prob"`
 	StragglerExtraMs float64     `json:"straggler_extra_ms"`
 	DeadlineMs       float64     `json:"deadline_ms"`
+	Partitions       []Partition `json:"partitions"`
+}
+
+// Federation carries just enough shape for the engine to know how many
