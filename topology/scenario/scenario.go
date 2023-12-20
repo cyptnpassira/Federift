@@ -33,3 +33,7 @@ type Network struct {
 // clients/rounds to simulate. The privacy fields live here too but are unused
 // on the Go side.
 type Federation struct {
+	NumClients     int `json:"num_clients"`
+	Rounds         int `json:"rounds"`
+	ClientsPerRound int `json:"clients_per_round"`
+}
