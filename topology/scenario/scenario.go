@@ -43,3 +43,7 @@ type Scenario struct {
 	Name       string     `json:"name"`
 	Seed       int64      `json:"seed"`
 	Federation Federation `json:"federation"`
+	Network    Network    `json:"network"`
+}
+
+// Defaults fills sensible values for anything left at zero.
