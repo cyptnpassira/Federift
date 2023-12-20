@@ -47,3 +47,6 @@ type Scenario struct {
 }
 
 // Defaults fills sensible values for anything left at zero.
+func (s *Scenario) Defaults() {
+	if s.Federation.NumClients == 0 {
+		s.Federation.NumClients = 10
