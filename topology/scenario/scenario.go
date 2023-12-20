@@ -37,3 +37,6 @@ type Federation struct {
 	Rounds         int `json:"rounds"`
 	ClientsPerRound int `json:"clients_per_round"`
 }
+
+// Scenario is the top-level shared document.
+type Scenario struct {
