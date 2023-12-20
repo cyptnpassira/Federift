@@ -40,3 +40,6 @@ type Federation struct {
 
 // Scenario is the top-level shared document.
 type Scenario struct {
+	Name       string     `json:"name"`
+	Seed       int64      `json:"seed"`
+	Federation Federation `json:"federation"`
