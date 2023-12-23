@@ -57,3 +57,7 @@ func (s *Scenario) Defaults() {
 	if s.Federation.ClientsPerRound == 0 {
 		s.Federation.ClientsPerRound = s.Federation.NumClients
 	}
+	if s.Network.DeadlineMs == 0 {
+		s.Network.DeadlineMs = 500
+	}
+	if s.Seed == 0 {
