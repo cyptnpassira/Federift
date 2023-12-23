@@ -50,3 +50,7 @@ type Scenario struct {
 func (s *Scenario) Defaults() {
 	if s.Federation.NumClients == 0 {
 		s.Federation.NumClients = 10
+	}
+	if s.Federation.Rounds == 0 {
+		s.Federation.Rounds = 20
+	}
