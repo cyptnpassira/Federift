@@ -54,3 +54,6 @@ func (s *Scenario) Defaults() {
 	if s.Federation.Rounds == 0 {
 		s.Federation.Rounds = 20
 	}
+	if s.Federation.ClientsPerRound == 0 {
+		s.Federation.ClientsPerRound = s.Federation.NumClients
+	}
