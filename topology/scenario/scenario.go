@@ -61,3 +61,6 @@ func (s *Scenario) Defaults() {
 		s.Network.DeadlineMs = 500
 	}
 	if s.Seed == 0 {
+		s.Seed = 1234
+	}
+}
