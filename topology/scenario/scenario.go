@@ -64,3 +64,7 @@ func (s *Scenario) Defaults() {
 		s.Seed = 1234
 	}
 }
+
+// Load reads and parses a scenario JSON file.
+func Load(path string) (*Scenario, error) {
+	raw, err := os.ReadFile(path)
