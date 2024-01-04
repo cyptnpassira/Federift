@@ -6,3 +6,5 @@ core.
 ## `pipeline.sh` / `pipeline.ps1`
 
 Both do the same two steps:
+
+1. Run the Go topology engine with `-emit-trace` to produce `trace.json`.
