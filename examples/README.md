@@ -15,3 +15,6 @@ Both do the same two steps:
 # POSIX
 ./examples/pipeline.sh                                   # fractured-robust
 ./examples/pipeline.sh federift/scenarios/noniid-dp.json # any scenario
+```
+
+```powershell
