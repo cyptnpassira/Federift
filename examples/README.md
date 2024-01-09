@@ -18,3 +18,5 @@ Both do the same two steps:
 ```
 
 ```powershell
+# Windows PowerShell
+./examples/pipeline.ps1
