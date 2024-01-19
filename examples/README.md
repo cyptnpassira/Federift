@@ -23,3 +23,5 @@ Both do the same two steps:
 ./examples/pipeline.ps1 -Scenario federift/scenarios/noniid-dp.json
 ```
 
+## What to look for
+
