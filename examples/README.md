@@ -25,3 +25,5 @@ Both do the same two steps:
 
 ## What to look for
 
+- The Python **drop** column spikes during the partition windows defined in the
+  scenario's `network.partitions`.
