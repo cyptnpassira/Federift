@@ -4,3 +4,5 @@ param(
     [string]$Scenario = "federift/scenarios/fractured-robust.json"
 )
 $ErrorActionPreference = "Stop"
+
+$root  = Split-Path -Parent $PSScriptRoot
