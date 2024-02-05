@@ -8,3 +8,5 @@ $ErrorActionPreference = "Stop"
 $root  = Split-Path -Parent $PSScriptRoot
 $trace = Join-Path $root "trace.json"
 
+Write-Host ">> [go] simulating network topology for $Scenario"
+Push-Location (Join-Path $root "topology")
