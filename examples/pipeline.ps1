@@ -6,3 +6,5 @@ param(
 $ErrorActionPreference = "Stop"
 
 $root  = Split-Path -Parent $PSScriptRoot
+$trace = Join-Path $root "trace.json"
+
