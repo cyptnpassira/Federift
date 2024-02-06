@@ -14,3 +14,5 @@ try {
     go run ./cmd/topology -scenario "../$Scenario" -emit-trace $trace
 } finally {
     Pop-Location
+}
+
