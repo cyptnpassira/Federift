@@ -16,3 +16,5 @@ try {
     Pop-Location
 }
 
+Write-Host ">> [py] running federated round with the network trace applied"
+Push-Location $root
