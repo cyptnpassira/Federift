@@ -12,3 +12,5 @@ Write-Host ">> [go] simulating network topology for $Scenario"
 Push-Location (Join-Path $root "topology")
 try {
     go run ./cmd/topology -scenario "../$Scenario" -emit-trace $trace
+} finally {
+    Pop-Location
