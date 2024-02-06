@@ -18,3 +18,5 @@ try {
 
 Write-Host ">> [py] running federated round with the network trace applied"
 Push-Location $root
+try {
+    python -m federift run $Scenario --trace $trace
