@@ -21,3 +21,7 @@ def derive_seed(master: int, *parts: object) -> int:
 
 def stream(master: int, *parts: object) -> random.Random:
     return random.Random(derive_seed(master, *parts))
+
+
+def gaussian_vector(rng: random.Random, dim: int, sigma: float) -> List[float]:
+    return [rng.gauss(0.0, sigma) for _ in range(dim)]
