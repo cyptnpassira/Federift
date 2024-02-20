@@ -68,3 +68,13 @@ class Client:
         return pull
 
 
+def build_clients(
+    partitions: List[Dict[int, int]],
+    dim: int,
+    num_classes: int,
+    master_seed: int,
+) -> List[Client]:
+    return [
+        Client(cid=i, counts=counts, dim=dim, num_classes=num_classes, master_seed=master_seed)
+        for i, counts in enumerate(partitions)
+    ]
