@@ -3,3 +3,4 @@
 # federated round honouring the resulting drops/partitions.
 set -euo pipefail
 
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
