@@ -9,3 +9,4 @@ TRACE="${ROOT}/trace.json"
 
 echo ">> [go] simulating network topology for ${SCEN}"
 ( cd "${ROOT}/topology" && go run ./cmd/topology -scenario "../${SCEN}" -emit-trace "${TRACE}" )
+
