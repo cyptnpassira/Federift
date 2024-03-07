@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="monospace" role="img" aria-label="Animated chart of convergence and privacy noise trade-off">
+  <title>federift: privacy / convergence trade-off</title>
+  <desc>Two animated traces: a convergence curve descending toward the client targets, and a leakage-signal band that shrinks as differential-privacy noise increases.</desc>
+
+  <defs>
+    <linearGradient id="pane" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f1720"/>
