@@ -17,3 +17,8 @@
   <text x="24" y="34" fill="#7dd3fc" font-size="17" letter-spacing="1">privacy ↔ convergence</text>
   <text x="24" y="53" fill="#3f6076" font-size="11">higher σ (DP noise) → lower leakage signal, slower convergence · APPROXIMATE</text>
 
+  <!-- axes -->
+  <g stroke="#243447" stroke-width="1">
+    <line x1="70" y1="90" x2="70" y2="290"/>
+    <line x1="70" y1="290" x2="680" y2="290"/>
+  </g>
