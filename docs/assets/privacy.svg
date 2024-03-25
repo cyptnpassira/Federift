@@ -26,3 +26,7 @@
     <text x="36" y="96">hi</text>
     <text x="36" y="290">lo</text>
     <text x="70" y="308">round 0</text>
+    <text x="640" y="308">round N</text>
+  </g>
+
+  <!-- gridlines -->
