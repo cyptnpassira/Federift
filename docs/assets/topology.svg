@@ -9,3 +9,8 @@
 
   <!-- links from aggregator (360,190) to clients -->
   <g stroke="#1e3a52" stroke-width="1.6" fill="none">
+    <line x1="360" y1="190" x2="150" y2="110"/>
+    <line x1="360" y1="190" x2="150" y2="190"/>
+    <line x1="360" y1="190" x2="150" y2="270"/>
+    <line x1="360" y1="190" x2="250" y2="70"/>
+    <line x1="360" y1="190" x2="250" y2="310"/>
