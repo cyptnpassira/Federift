@@ -26,3 +26,7 @@
     <circle r="3.6">
       <animateMotion dur="2.4s" begin="0.4s" repeatCount="indefinite" path="M570,270 L360,190"/>
       <animate attributeName="opacity" values="0;1;1;0" dur="2.4s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3.6">
+      <animateMotion dur="2.2s" begin="1.3s" repeatCount="indefinite" path="M470,70 L360,190"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" begin="1.3s" repeatCount="indefinite"/>
