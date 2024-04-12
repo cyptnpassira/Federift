@@ -35,3 +35,7 @@
       <animateMotion dur="2.7s" begin="0.9s" repeatCount="indefinite" path="M570,110 L360,190"/>
       <animate attributeName="opacity" values="0;1;1;0" dur="2.7s" begin="0.9s" repeatCount="indefinite"/>
     </circle>
+  </g>
+
+  <!-- aggregator -->
+  <circle cx="360" cy="190" r="20" fill="#0ea5e9"/>
