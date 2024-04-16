@@ -39,3 +39,7 @@
 
   <!-- aggregator -->
   <circle cx="360" cy="190" r="20" fill="#0ea5e9"/>
+  <circle cx="360" cy="190" r="20" fill="none" stroke="#7dd3fc" stroke-width="1.5">
+    <animate attributeName="r" values="20;29;20" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite"/>
+  </circle>
