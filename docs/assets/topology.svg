@@ -47,3 +47,8 @@
 
   <!-- left cluster: fractures on schedule -->
   <g fill="#38bdf8">
+    <g>
+      <circle cx="150" cy="110" r="9"/>
+      <circle cx="150" cy="190" r="9"/>
+      <circle cx="150" cy="270" r="9"/>
+      <circle cx="250" cy="70"  r="9"/>
