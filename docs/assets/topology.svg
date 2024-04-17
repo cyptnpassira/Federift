@@ -60,3 +60,7 @@
     <circle cx="470" cy="310" r="9"/>
     <circle cx="570" cy="110" r="9"/>
     <circle cx="570" cy="190" r="9"/>
+    <circle cx="570" cy="270" r="9"/>
+  </g>
+
+  <!-- partition seam sweeping the left links during the isolation window -->
