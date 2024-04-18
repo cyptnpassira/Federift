@@ -7,3 +7,6 @@ the top-level README.
 
 The hard constraint driving the whole design: **Python and Go must never share
 code, only a file.** That forces a clean contract — the scenario JSON — and
+makes each half independently runnable and independently teachable.
+
+- Python owns the *math you'd write in a notebook*: aggregation, noise,
