@@ -38,3 +38,7 @@ All randomness flows from one master seed through
 mirror in Go). Two consequences:
 
 1. Independent effects (client selection, jitter, drops) never accidentally
+   correlate through a shared stream.
+2. Any single draw can be reproduced in isolation for debugging.
+
+## Privacy accounting: deliberately approximate
