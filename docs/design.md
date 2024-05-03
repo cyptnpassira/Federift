@@ -42,3 +42,6 @@ mirror in Go). Two consequences:
 2. Any single draw can be reproduced in isolation for debugging.
 
 ## Privacy accounting: deliberately approximate
+
+federift uses the closed-form Gaussian-mechanism bound and both composition
+theorems. This is a **teaching seam**, isolated in `privacy.account`, so that
