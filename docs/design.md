@@ -35,3 +35,6 @@ says so loudly.
 
 All randomness flows from one master seed through
 `sha256(master :: label-parts)` sub-streams (`rng.py` in Python, an FNV-based
+mirror in Go). Two consequences:
+
+1. Independent effects (client selection, jitter, drops) never accidentally
