@@ -35,3 +35,9 @@ jobs:
           go-version: "1.21"
       - name: Build & vet
         working-directory: topology
+        run: |
+          go build ./...
+          go vet ./...
+      - name: Simulate a scenario
+        working-directory: topology
+        run: go run ./cmd/topology -scenario ../federift/scenarios/fractured-robust.json
