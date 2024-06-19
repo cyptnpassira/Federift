@@ -41,3 +41,9 @@ jobs:
       - name: Simulate a scenario
         working-directory: topology
         run: go run ./cmd/topology -scenario ../federift/scenarios/fractured-robust.json
+
+  pipeline:
+    runs-on: ubuntu-latest
+    needs: [ python, go ]
+    steps:
+      - uses: actions/checkout@v4
