@@ -8,3 +8,4 @@ semantic-ish versions.
 
 ### Added
 - Go topology engine (`topology/`): per-round latency, drops, stragglers, and
+  scheduled partitions, all deterministic from the scenario seed.
