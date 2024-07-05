@@ -11,3 +11,4 @@ semantic-ish versions.
   scheduled partitions, all deterministic from the scenario seed.
 - `-emit-trace` on the Go CLI producing a compact reachability document.
 - Python `run --trace` consumes the Go trace, dropping unreachable clients from
+  the round - the first end-to-end coupling of the two halves.
