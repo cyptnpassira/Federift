@@ -13,3 +13,4 @@ semantic-ish versions.
 - Python `run --trace` consumes the Go trace, dropping unreachable clients from
   the round - the first end-to-end coupling of the two halves.
 - Two animated SVGs (topology + privacy/convergence) under `docs/assets/`.
+
