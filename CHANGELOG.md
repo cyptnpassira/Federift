@@ -19,3 +19,4 @@ semantic-ish versions.
   `privacy`, `network`) so each language ignores what it doesn't own.
 
 ## [0.4.0] - 2026-08-24
+
