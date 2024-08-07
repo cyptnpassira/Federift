@@ -16,3 +16,4 @@ semantic-ish versions.
 
 ### Changed
 - Scenario schema formalised into three namespaced blocks (`federation`,
+  `privacy`, `network`) so each language ignores what it doesn't own.
