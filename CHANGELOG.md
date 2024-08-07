@@ -15,3 +15,4 @@ semantic-ish versions.
 - Two animated SVGs (topology + privacy/convergence) under `docs/assets/`.
 
 ### Changed
+- Scenario schema formalised into three namespaced blocks (`federation`,
