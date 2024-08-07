@@ -14,3 +14,4 @@ semantic-ish versions.
   the round - the first end-to-end coupling of the two halves.
 - Two animated SVGs (topology + privacy/convergence) under `docs/assets/`.
 
+### Changed
