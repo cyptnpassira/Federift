@@ -20,3 +20,4 @@ semantic-ish versions.
 
 ## [0.4.0] - 2026-08-24
 
+### Added
