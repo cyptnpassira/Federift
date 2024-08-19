@@ -155,3 +155,23 @@ def run(
                 convergence=_convergence(global_model, targets),
                 mean_distinguishability=lk.mean_distinguishability,
                 mean_cosine_leak=lk.mean_cosine_leak,
+                dropped=dropped,
+            )
+        )
+        last_deltas = raw_deltas
+        last_targets = sel_targets
+
+    result.final_convergence = _convergence(global_model, targets)
+    if scenario.sigma > 0.0:
+        result.privacy_report = privacy.account(
+            scenario.sigma, scenario.clip_norm, scenario.delta, scenario.rounds
+        ).as_dict()
+    if last_deltas:
+        result.leakage_report = leakage.summarize(last_deltas, last_targets).as_dict()
+    return result
+
+
+def _convergence(global_model: Vector, targets: List[Vector]) -> float:
+    """Mean L2 distance between the global model and all client targets."""
+    if not targets:
+        return 0.0
