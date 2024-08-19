@@ -22,3 +22,4 @@ semantic-ish versions.
 
 ### Added
 - Approximate DP accounting: Gaussian-mechanism plus naive **and** advanced
+  composition; reports the tighter of the two.
