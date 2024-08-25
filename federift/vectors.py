@@ -78,3 +78,15 @@ def clip_l2(a: Sequence[float], max_norm: float) -> Vector:
     """Clip a vector to a maximum L2 norm (the classic DP-SGD clip)."""
     n = norm(a)
     if n <= max_norm or n == 0.0:
+        return list(a)
+    factor = max_norm / n
+    return [x * factor for x in a]
+
+
+def _check(a: Sequence[float], b: Sequence[float]) -> None:
+    if len(a) != len(b):
+        raise ValueError(f"dimension mismatch: {len(a)} vs {len(b)}")
+
+
+def as_floats(values: Iterable) -> Vector:
+    return [float(x) for x in values]
