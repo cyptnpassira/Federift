@@ -116,3 +116,4 @@ def skew_index(counts: Dict[int, int], num_classes: int) -> float:
         if p > 0:
             entropy -= p * math.log(p)
     max_entropy = math.log(num_classes)
+    return 1.0 - (entropy / max_entropy if max_entropy > 0 else 0.0)
