@@ -175,3 +175,4 @@ def _convergence(global_model: Vector, targets: List[Vector]) -> float:
     """Mean L2 distance between the global model and all client targets."""
     if not targets:
         return 0.0
+    return math.fsum(vectors.l2_distance(global_model, t) for t in targets) / len(targets)
