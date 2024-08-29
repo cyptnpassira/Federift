@@ -27,3 +27,4 @@ semantic-ish versions.
   gradient-cosine leak, surfaced in the CLI report.
 - `privacy` subcommand for accounting-only output.
 
+### Changed
