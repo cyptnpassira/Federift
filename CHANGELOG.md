@@ -26,3 +26,4 @@ semantic-ish versions.
 - Leakage heuristics module (`leakage.py`): update distinguishability and
   gradient-cosine leak, surfaced in the CLI report.
 - `privacy` subcommand for accounting-only output.
+
