@@ -28,3 +28,4 @@ semantic-ish versions.
 - `privacy` subcommand for accounting-only output.
 
 ### Changed
+- Server-side Gaussian noise wired into the round loop; `sigma = 0` documented
