@@ -33,3 +33,4 @@ semantic-ish versions.
 
 ## [0.3.0] - 2025-11-18
 
+### Added
