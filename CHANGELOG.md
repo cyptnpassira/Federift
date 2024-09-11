@@ -32,3 +32,4 @@ semantic-ish versions.
   as the explicit non-private baseline.
 
 ## [0.3.0] - 2025-11-18
+
