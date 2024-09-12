@@ -34,3 +34,4 @@ semantic-ish versions.
 ## [0.3.0] - 2025-11-18
 
 ### Added
+- Aggregation rules beyond FedAvg: uniform mean, coordinate-wise trimmed mean,
