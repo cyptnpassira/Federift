@@ -37,3 +37,4 @@ semantic-ish versions.
 - Aggregation rules beyond FedAvg: uniform mean, coordinate-wise trimmed mean,
   and a simplified multi-Krum selection.
 - Dirichlet non-IID partitioner with a stdlib-only gamma sampler.
+- `partition` subcommand with a per-client skew-index report.
