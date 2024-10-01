@@ -44,3 +44,4 @@ semantic-ish versions.
 ### Added
 - Scenario file format (JSON) with federation/privacy/network blocks.
 - Bundled scenarios: `baseline-iid`, `noniid-dp`, `fractured-robust`.
+- Round-by-round text report with convergence and leak indicators.
