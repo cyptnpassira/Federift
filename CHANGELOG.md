@@ -42,3 +42,4 @@ semantic-ish versions.
 ## [0.2.0] - 2024-06-21
 
 ### Added
+- Scenario file format (JSON) with federation/privacy/network blocks.
