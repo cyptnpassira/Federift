@@ -40,3 +40,4 @@ semantic-ish versions.
 - `partition` subcommand with a per-client skew-index report.
 
 ## [0.2.0] - 2024-06-21
+
