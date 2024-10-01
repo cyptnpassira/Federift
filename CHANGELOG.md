@@ -39,3 +39,4 @@ semantic-ish versions.
 - Dirichlet non-IID partitioner with a stdlib-only gamma sampler.
 - `partition` subcommand with a per-client skew-index report.
 
+## [0.2.0] - 2024-06-21
