@@ -46,3 +46,4 @@ semantic-ish versions.
 - Bundled scenarios: `baseline-iid`, `noniid-dp`, `fractured-robust`.
 - Round-by-round text report with convergence and leak indicators.
 
+## [0.1.0] - 2022-09-04
