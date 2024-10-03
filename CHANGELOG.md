@@ -50,3 +50,4 @@ semantic-ish versions.
 
 ### Added
 - Initial Python stdlib core: deterministic toy-vector clients, IID
+  partitioning, FedAvg aggregation, seeded RNG fan-out, and a text CLI report.
