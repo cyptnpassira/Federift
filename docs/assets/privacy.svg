@@ -24,3 +24,11 @@
   </g>
   <g fill="#3f6076" font-size="10">
     <text x="36" y="96">hi</text>
+    <text x="36" y="290">lo</text>
+    <text x="70" y="308">round 0</text>
+    <text x="640" y="308">round N</text>
+  </g>
+
+  <!-- gridlines -->
+  <g stroke="#131f2b" stroke-width="1">
+    <line x1="70" y1="140" x2="680" y2="140"/>
