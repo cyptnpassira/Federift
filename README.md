@@ -159,3 +159,34 @@ in `examples/` runs both steps: `examples/pipeline.sh` (POSIX) or
 `examples/pipeline.ps1` (PowerShell).
 
 ## Reading the numbers
+
+<img src="docs/assets/privacy.svg" alt="A convergence curve descending toward client targets alongside a leakage-signal band that shrinks as the sigma noise dial turns up" width="640" />
+
+- **convergence**: mean L2 distance between the global model and every client's
+  private target. It goes down as the federation agrees. DP noise and dropped
+  clients slow it.
+- **leak-dist (distinguishability)**: how far each client's clipped update sits
+  from the crowd's average update, normalised. A crude membership-inference
+  proxy: an update that is easy to pick out is intuitively easier to detect.
+- **cosine leak**: how strongly a raw update points along the client's own
+  private target direction. Turning up `sigma` should push both leakage signals
+  down, and convergence up (that is, worse: the trade-off).
+- **epsilon**: printed only when `sigma > 0`. Computed from the classic
+  Gaussian-mechanism bound and composed with both the naive and advanced
+  composition theorems; federift reports the smaller. These are teaching
+  approximations.
+
+### A worked reading
+
+From `fractured-robust` with the Go trace applied you will see something like:
+
+```
+rnd part drop     step  converge  leak-dist
+ 10    3    9   3.34xx    x.xxxx   #######################   <- partition window
+ ...
+ 34   11    1   x.xxxx    x.xxxx   #####..........          <- healthy round
+```
+
+During rounds 8 to 14, 25 to 33, and 40 to 44 the isolated clusters vanish from
+`part` and the `drop` count spikes: the Go partition schedule bleeding into the
+Python learning loop. Convergence flattens while the network is fractured and
