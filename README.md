@@ -190,3 +190,35 @@ rnd part drop     step  converge  leak-dist
 During rounds 8 to 14, 25 to 33, and 40 to 44 the isolated clusters vanish from
 `part` and the `drop` count spikes: the Go partition schedule bleeding into the
 Python learning loop. Convergence flattens while the network is fractured and
+resumes once the island rejoins.
+
+## The honest part (read twice)
+
+federift is built to be pedagogically honest, so here is the fine print in
+plain language.
+
+1. **This is not a privacy proof.** The `(epsilon, delta)` values come from
+   closed-form sufficient conditions (the Dwork and Roth Gaussian-mechanism
+   bound, plus naive and advanced composition). They are loose. Real
+   deployments use an RDP, PLD, or moments accountant that gives far tighter,
+   and differently shaped, guarantees. Do not quote federift's epsilon anywhere
+   that matters.
+2. **The clients do not learn anything real.** There is no dataset, no loss
+   surface, no gradient of a real model. A client update is a deterministic
+   pull toward a fixed pseudo-random target vector. This is enough to study
+   aggregation dynamics, non-IID skew, and drop behaviour, and nothing more.
+3. **The leakage metrics are heuristics, not attacks.** Distinguishability and
+   cosine leak are intuition-builders. They are not calibrated attack success
+   rates and should not be read as such.
+4. **The network model is a toy.** Independent per-client latency and drop
+   draws, no shared congestion, no TCP, no real topology graph. It teaches the
+   shape of stragglers and partitions, not their true statistics.
+5. **Determinism over realism.** Everything is seeded so runs reproduce
+   exactly. That is great for teaching and a poor model of a chaotic real
+   network.
+
+If you want the real thing: read the FedAvg paper (McMahan et al. 2017), the
+DP-SGD paper (Abadi et al. 2016), and use a maintained DP accounting library.
+federift is the sketch you draw before reaching for those.
+
+## Concepts, quickly
