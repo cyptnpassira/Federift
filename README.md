@@ -222,3 +222,34 @@ DP-SGD paper (Abadi et al. 2016), and use a maintained DP accounting library.
 federift is the sketch you draw before reaching for those.
 
 ## Concepts, quickly
+
+- **round**: one full cycle. Select clients, local update, clip, aggregate,
+  optionally add DP noise, step the global model.
+- **non-IID**: clients hold skewed label mixes. federift produces this with a
+  Dirichlet(alpha) prior; small alpha means extreme skew (a client may own one
+  class), large alpha approaches IID. The `partition` subcommand prints a
+  per-client `skew` score (0 uniform, 1 single class) so you can see what alpha
+  bought you.
+- **clipping (C)**: each client update is projected to L2 norm at or below
+  `clip_norm` before it leaves. This bounds any single client's influence and
+  is the precondition that makes the Gaussian noise calibration meaningful.
+- **sigma**: the DP noise multiplier. Server-side Gaussian noise of scale
+  `sigma * clip_norm` is added to the aggregate. `sigma = 0` is the non-private
+  baseline, and federift says so.
+- **trimmed mean, beta**: a robustness knob. With `aggregator: "trimmed"` and
+  `trim_beta: 0.2`, the top and bottom 20 percent of values are dropped per
+  coordinate before averaging, cheap insurance against a few wild updates.
+- **deadline**: the Go engine marks any client whose simulated latency exceeds
+  `deadline_ms` as effectively dropped. Stragglers routinely blow past it; that
+  is how a heavy latency tail turns into missing contributors.
+
+## Extending it
+
+Because the two halves only agree on JSON, extension is local:
+
+- **New aggregator?** Add a function to `federift/aggregate.py` and a branch in
+  `simulator._aggregate`. The Go side never needs to know.
+- **New network effect?** Add a field under `network` in a scenario and read it
+  in `topology/engine`. Python ignores it.
+- **Different client dynamics?** Rewrite `Client.local_update`. Everything
+  downstream (clipping, aggregation, leakage) is agnostic to how the delta was
