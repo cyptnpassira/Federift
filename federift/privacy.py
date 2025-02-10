@@ -102,3 +102,17 @@ class PrivacyReport:
 
 def account(sigma: float, clip_norm: float, delta: float, rounds: int) -> PrivacyReport:
     eps_round = gaussian_mechanism_epsilon(sigma, delta)
+    delta_prime = min(1e-6, delta)
+    naive = naive_composition(eps_round, rounds)
+    if math.isinf(eps_round):
+        adv = float("inf")
+    else:
+        adv = advanced_composition(eps_round, rounds, delta_prime)
+    return PrivacyReport(
+        sigma=sigma,
+        clip_norm=clip_norm,
+        delta=delta,
+        rounds=rounds,
+        eps_per_round=eps_round,
+        eps_naive=naive,
+        eps_advanced=min(naive, adv),
