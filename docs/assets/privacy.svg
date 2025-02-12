@@ -18,3 +18,11 @@
   <text x="24" y="53" fill="#3f6076" font-size="11">higher σ (DP noise) → lower leakage signal, slower convergence · APPROXIMATE</text>
 
   <!-- axes -->
+  <g stroke="#243447" stroke-width="1">
+    <line x1="70" y1="90" x2="70" y2="290"/>
+    <line x1="70" y1="290" x2="680" y2="290"/>
+  </g>
+  <g fill="#3f6076" font-size="10">
+    <text x="36" y="96">hi</text>
+    <text x="36" y="290">lo</text>
+    <text x="70" y="308">round 0</text>
