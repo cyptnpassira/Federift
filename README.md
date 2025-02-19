@@ -134,3 +134,34 @@ federift run federift/scenarios/baseline-iid.json
 ### Go
 
 ```bash
+cd topology
+go build ./...
+go run ./cmd/topology -scenario ../federift/scenarios/fractured-robust.json
+```
+
+### The handshake: Go network feeds Python privacy
+
+```bash
+# 1) Go simulates the network and writes a reachability trace
+cd topology
+go run ./cmd/topology \
+    -scenario ../federift/scenarios/fractured-robust.json \
+    -emit-trace ../trace.json
+
+# 2) Python runs the federated round, honouring exactly those drops
+cd ..
+python -m federift run federift/scenarios/fractured-robust.json --trace trace.json
+```
+
+Now the `drop` column in Python's report matches the partitions Go scheduled.
+Convergence stalls during an isolation window, then recovers. A one-shot script
+in `examples/` runs both steps: `examples/pipeline.sh` (POSIX) or
+`examples/pipeline.ps1` (PowerShell).
+
+## Reading the numbers
+
+<img src="docs/assets/privacy.svg" alt="A convergence curve descending toward client targets alongside a leakage-signal band that shrinks as the sigma noise dial turns up" width="640" />
+
+- **convergence**: mean L2 distance between the global model and every client's
+  private target. It goes down as the federation agrees. DP noise and dropped
+  clients slow it.
