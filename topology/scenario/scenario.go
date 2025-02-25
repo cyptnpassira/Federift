@@ -68,3 +68,13 @@ func (s *Scenario) Defaults() {
 // Load reads and parses a scenario JSON file.
 func Load(path string) (*Scenario, error) {
 	raw, err := os.ReadFile(path)
+	if err != nil {
+		return nil, fmt.Errorf("read scenario: %w", err)
+	}
+	var s Scenario
+	if err := json.Unmarshal(raw, &s); err != nil {
+		return nil, fmt.Errorf("parse scenario: %w", err)
+	}
+	s.Defaults()
+	return &s, nil
+}
