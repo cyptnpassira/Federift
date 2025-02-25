@@ -170,3 +170,26 @@ func Run(sc *scenario.Scenario) []RoundResult {
 }
 
 // BuildTrace converts full round results into the compact reachability trace.
+func BuildTrace(name string, rounds []RoundResult) Trace {
+	t := Trace{Scenario: name}
+	for _, r := range rounds {
+		t.Rounds = append(t.Rounds, TraceRound{Round: r.Round, Reachable: r.Reachable})
+	}
+	return t
+}
+
+func percentile(vals []float64, q float64) float64 {
+	if len(vals) == 0 {
+		return 0
+	}
+	cp := append([]float64(nil), vals...)
+	sort.Float64s(cp)
+	if len(cp) == 1 {
+		return cp[0]
+	}
+	pos := q * float64(len(cp)-1)
+	lo := int(math.Floor(pos))
+	hi := int(math.Ceil(pos))
+	frac := pos - float64(lo)
+	return cp[lo]*(1-frac) + cp[hi]*frac
+}
