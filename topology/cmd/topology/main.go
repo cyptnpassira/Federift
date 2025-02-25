@@ -93,3 +93,17 @@ func printReport(sc *scenario.Scenario, rounds []engine.RoundResult) {
 		sc.Federation.ClientsPerRound, sc.Network.DeadlineMs)
 	fmt.Println(strings.Repeat("-", 72))
 	fmt.Printf("%3s %5s %6s %8s %8s  drop-rate\n", "rnd", "reach", "sel", "p50ms", "p95ms")
+
+	var totalDrop float64
+	for _, r := range rounds {
+		fmt.Printf("%3d %5d %6d %8.1f %8.1f  %s %.2f\n",
+			r.Round, len(r.Reachable), len(r.Selected),
+			r.P50Ms, r.P95Ms, bar(r.DropRate, 16), r.DropRate)
+		totalDrop += r.DropRate
+	}
+	fmt.Println(strings.Repeat("-", 72))
+	if len(rounds) > 0 {
+		fmt.Printf("mean drop-rate across rounds: %.3f\n", totalDrop/float64(len(rounds)))
+	}
+	fmt.Println("note: educational discrete network sim; not a real network model.")
+}
