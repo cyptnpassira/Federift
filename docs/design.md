@@ -28,3 +28,9 @@ distribution, and "training" is a deterministic pull toward it. This keeps:
 - **legibility** — convergence is literally "distance to target", and the
   effect of non-IID skew or DP noise is visible in a handful of rounds.
 
+The cost is honesty: these clients don't learn anything real, and the README
+says so loudly.
+
+## The RNG discipline
+
+All randomness flows from one master seed through
