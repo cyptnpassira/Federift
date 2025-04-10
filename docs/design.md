@@ -11,3 +11,9 @@ makes each half independently runnable and independently teachable.
 
 - Python owns the *math you'd write in a notebook*: aggregation, noise,
   privacy accounting, leakage signals.
+- Go owns the *systems layer you'd write in a service*: latency, packet loss,
+  stragglers, network partitions.
+
+They meet through `-emit-trace` → `run --trace`. Go decides who is reachable;
+Python decides what that reachability does to learning and privacy.
+
