@@ -109,3 +109,34 @@ Three bundled scenarios live in `federift/scenarios/`: `baseline-iid`,
 ## Running it
 
 ### Python (no install needed)
+
+```bash
+# list bundled scenarios
+python -m federift scenarios
+
+# run a scenario with a round-by-round text report
+python -m federift run federift/scenarios/noniid-dp.json
+
+# inspect the non-IID label skew a scenario produces
+python -m federift partition federift/scenarios/fractured-robust.json
+
+# just the DP accounting approximation
+python -m federift privacy federift/scenarios/noniid-dp.json
+```
+
+Or install the console script:
+
+```bash
+pip install -e .
+federift run federift/scenarios/baseline-iid.json
+```
+
+### Go
+
+```bash
+cd topology
+go build ./...
+go run ./cmd/topology -scenario ../federift/scenarios/fractured-robust.json
+```
+
+### The handshake: Go network feeds Python privacy
