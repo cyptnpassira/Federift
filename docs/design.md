@@ -41,3 +41,9 @@ mirror in Go). Two consequences:
    correlate through a shared stream.
 2. Any single draw can be reproduced in isolation for debugging.
 
+## Privacy accounting: deliberately approximate
+
+federift uses the closed-form Gaussian-mechanism bound and both composition
+theorems. This is a **teaching seam**, isolated in `privacy.account`, so that
+the natural next exercise — "replace this with a real RDP accountant" — touches
+exactly one function. The README's honesty section exists precisely because
