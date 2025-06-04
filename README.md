@@ -234,3 +234,34 @@ federift is the sketch you draw before reaching for those.
   `clip_norm` before it leaves. This bounds any single client's influence and
   is the precondition that makes the Gaussian noise calibration meaningful.
 - **sigma**: the DP noise multiplier. Server-side Gaussian noise of scale
+  `sigma * clip_norm` is added to the aggregate. `sigma = 0` is the non-private
+  baseline, and federift says so.
+- **trimmed mean, beta**: a robustness knob. With `aggregator: "trimmed"` and
+  `trim_beta: 0.2`, the top and bottom 20 percent of values are dropped per
+  coordinate before averaging, cheap insurance against a few wild updates.
+- **deadline**: the Go engine marks any client whose simulated latency exceeds
+  `deadline_ms` as effectively dropped. Stragglers routinely blow past it; that
+  is how a heavy latency tail turns into missing contributors.
+
+## Extending it
+
+Because the two halves only agree on JSON, extension is local:
+
+- **New aggregator?** Add a function to `federift/aggregate.py` and a branch in
+  `simulator._aggregate`. The Go side never needs to know.
+- **New network effect?** Add a field under `network` in a scenario and read it
+  in `topology/engine`. Python ignores it.
+- **Different client dynamics?** Rewrite `Client.local_update`. Everything
+  downstream (clipping, aggregation, leakage) is agnostic to how the delta was
+  produced, as long as it is a `list[float]` of the right dimension.
+- **Tighter privacy accounting?** `privacy.account` is the single seam. Swap
+  the closed-form bound for a real accountant and every report updates. Doing
+  this properly is exactly the exercise federift is trying to motivate.
+
+The design rule: the scenario file is the only contract. If a change would
+force both languages to recompile in lockstep, it probably belongs on one side
+only.
+
+## Layout
+
+```
