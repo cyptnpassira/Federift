@@ -13,3 +13,8 @@ makes each half independently runnable and independently teachable.
   privacy accounting, leakage signals.
 - Go owns the *systems layer you'd write in a service*: latency, packet loss,
   stragglers, network partitions.
+
+They meet through `-emit-trace` → `run --trace`. Go decides who is reachable;
+Python decides what that reachability does to learning and privacy.
+
+## Why toy vectors instead of a real model
