@@ -18,3 +18,9 @@ They meet through `-emit-trace` → `run --trace`. Go decides who is reachable;
 Python decides what that reachability does to learning and privacy.
 
 ## Why toy vectors instead of a real model
+
+A real model would drown the systems/privacy lesson in optimizer and dataset
+detail. Instead, each client owns a fixed target vector derived from its label
+distribution, and "training" is a deterministic pull toward it. This keeps:
+
+- **determinism** — every run reproduces, so a change in a report is caused by
