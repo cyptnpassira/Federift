@@ -24,3 +24,9 @@ detail. Instead, each client owns a fixed target vector derived from its label
 distribution, and "training" is a deterministic pull toward it. This keeps:
 
 - **determinism** — every run reproduces, so a change in a report is caused by
+  a change in *the thing you edited*, not RNG noise;
+- **legibility** — convergence is literally "distance to target", and the
+  effect of non-IID skew or DP noise is visible in a handful of rounds.
+
+The cost is honesty: these clients don't learn anything real, and the README
+says so loudly.
