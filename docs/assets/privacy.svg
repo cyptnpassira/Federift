@@ -36,3 +36,11 @@
     <line x1="70" y1="240" x2="680" y2="240"/>
   </g>
 
+  <!-- leakage band (shrinks over time as DP noise dominates) -->
+  <path d="M70,150 L680,150 L680,290 L70,290 Z" fill="url(#leak)">
+    <animate attributeName="d"
+      values="M70,150 L680,150 L680,290 L70,290 Z;
+              M70,150 L680,250 L680,290 L70,290 Z;
+              M70,150 L680,150 L680,290 L70,290 Z"
+      dur="7s" repeatCount="indefinite"/>
+  </path>
