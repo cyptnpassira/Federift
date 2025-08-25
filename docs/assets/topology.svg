@@ -49,3 +49,11 @@
   <g fill="#38bdf8">
     <g>
       <circle cx="150" cy="110" r="9"/>
+      <circle cx="150" cy="190" r="9"/>
+      <circle cx="150" cy="270" r="9"/>
+      <circle cx="250" cy="70"  r="9"/>
+      <circle cx="250" cy="310" r="9"/>
+      <animate attributeName="fill" values="#38bdf8;#38bdf8;#3a4756;#3a4756;#38bdf8" keyTimes="0;0.35;0.45;0.75;1" dur="8s" repeatCount="indefinite"/>
+    </g>
+    <!-- right cluster: stable -->
+    <circle cx="470" cy="70"  r="9"/>
