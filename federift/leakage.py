@@ -66,3 +66,13 @@ class LeakageReport:
 
 def summarize(deltas: Sequence[Vector], targets: Sequence[Vector]) -> LeakageReport:
     dist = update_distinguishability(deltas)
+    cos = gradient_cosine_leak(deltas, targets)
+    if not dist:
+        return LeakageReport(0.0, 0.0, 0.0, -1)
+    exposed = max(range(len(dist)), key=lambda i: dist[i])
+    return LeakageReport(
+        mean_distinguishability=math.fsum(dist) / len(dist),
+        max_distinguishability=max(dist),
+        mean_cosine_leak=math.fsum(cos) / len(cos) if cos else 0.0,
+        most_exposed_client=exposed,
+    )
