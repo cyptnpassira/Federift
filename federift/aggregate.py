@@ -67,3 +67,13 @@ def krum_like(deltas: Sequence[Sequence[float]], drop: int) -> Vector:
         )
         scores.append(math.fsum(dists[:m]))
     order = sorted(range(k), key=lambda i: scores[i])
+    chosen = [deltas[i] for i in order[:keep]]
+    return vectors.mean(chosen)
+
+
+AGGREGATORS = {
+    "fedavg": "sample-weighted mean",
+    "uniform": "unweighted mean",
+    "trimmed": "coordinate-wise trimmed mean",
+    "krum": "simplified multi-krum selection",
+}
