@@ -57,3 +57,11 @@
     </g>
     <!-- right cluster: stable -->
     <circle cx="470" cy="70"  r="9"/>
+    <circle cx="470" cy="310" r="9"/>
+    <circle cx="570" cy="110" r="9"/>
+    <circle cx="570" cy="190" r="9"/>
+    <circle cx="570" cy="270" r="9"/>
+  </g>
+
+  <!-- partition seam sweeping the left links during the isolation window -->
+  <g stroke="#f43f5e" stroke-width="2.6" fill="none" opacity="0">
