@@ -54,3 +54,11 @@ these bounds are loose and must not be mistaken for guarantees.
 If a change forces *both* languages to recompile together, it's modelled wrong.
 Add fields under the block owned by one side; the other side ignores unknown
 JSON keys by construction.
+
+## Determinism note
+
+Both halves are seeded from the same scenario seed, and the Python RNG
+fan-out is stable across runs on the same interpreter. The Go engine takes
+its own seed from the same field. If you change the partitioning or the
+aggregation order, the numeric output changes: keep the seed field in the
+scenario file when you want a reproducible report.
