@@ -8,3 +8,10 @@
       <stop offset="100%" stop-color="#070c12"/>
     </linearGradient>
     <linearGradient id="leak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f43f5e" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="720" height="340" fill="url(#pane)"/>
+  <text x="24" y="34" fill="#7dd3fc" font-size="17" letter-spacing="1">privacy ↔ convergence</text>
