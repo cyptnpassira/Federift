@@ -59,3 +59,34 @@ Pure standard library. No numpy, no torch. Vectors are `list[float]`.
 | `simulator.py` | the round loop that ties it together and can consume a Go trace |
 | `cli.py`       | text and JSON reports |
 
+### Go, the topology engine (`topology/`)
+
+Also pure standard library (`math/rand`, `hash/fnv`, `encoding/json`).
+
+| package | responsibility |
+|---|---|
+| `scenario/` | parses the shared JSON (only the fields Go needs) |
+| `engine/`   | per-round latency, drop, straggler, and partition simulation |
+| `cmd/topology/` | CLI: text report, full JSON, or `-emit-trace` for Python |
+
+The two sides are decoupled: each ignores JSON fields it does not understand,
+so you can extend one without recompiling the other.
+
+## The scenario is the contract
+
+One file feeds both halves. Blocks are namespaced by who reads them:
+
+```jsonc
+{
+  "name": "fractured-robust",
+  "seed": 424242,
+  "federation": {          // Python reads this
+    "num_clients": 24, "rounds": 50, "dim": 32,
+    "num_classes": 12, "num_samples": 12000,
+    "partition": "dirichlet", "alpha": 0.05,
+    "clients_per_round": 12, "lr": 0.35, "jitter": 0.08,
+    "aggregator": "trimmed", "trim_beta": 0.2
+  },
+  "privacy": {             // Python reads this
+    "clip_norm": 0.8, "sigma": 0.7, "delta": 1e-6
+  },
