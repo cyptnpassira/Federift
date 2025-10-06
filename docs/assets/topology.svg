@@ -18,3 +18,11 @@
     <line x1="360" y1="190" x2="470" y2="310"/>
     <line x1="360" y1="190" x2="570" y2="110"/>
     <line x1="360" y1="190" x2="570" y2="190"/>
+    <line x1="360" y1="190" x2="570" y2="270"/>
+  </g>
+
+  <!-- update packets travelling inward (right cluster stays active) -->
+  <g fill="#2dd4bf">
+    <circle r="3.6">
+      <animateMotion dur="2.4s" begin="0.4s" repeatCount="indefinite" path="M570,270 L360,190"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="2.4s" begin="0.4s" repeatCount="indefinite"/>
