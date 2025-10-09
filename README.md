@@ -90,3 +90,34 @@ One file feeds both halves. Blocks are namespaced by who reads them:
   "privacy": {             // Python reads this
     "clip_norm": 0.8, "sigma": 0.7, "delta": 1e-6
   },
+  "network": {             // Go reads this
+    "base_latency_ms": 50, "jitter_ms": 25,
+    "drop_prob": 0.1, "straggler_prob": 0.2,
+    "straggler_extra_ms": 1200, "deadline_ms": 500,
+    "partitions": [
+      { "round_start": 8,  "round_end": 14, "isolated": [0,1,2,3,4] },
+      { "round_start": 25, "round_end": 33, "isolated": [12,13,14,15,16,17] },
+      { "round_start": 40, "round_end": 44, "isolated": [20,21,22,23] }
+    ]
+  }
+}
+```
+
+Three bundled scenarios live in `federift/scenarios/`: `baseline-iid`,
+`noniid-dp`, and `fractured-robust`.
+
+## Running it
+
+### Python (no install needed)
+
+```bash
+# list bundled scenarios
+python -m federift scenarios
+
+# run a scenario with a round-by-round text report
+python -m federift run federift/scenarios/noniid-dp.json
+
+# inspect the non-IID label skew a scenario produces
+python -m federift partition federift/scenarios/fractured-robust.json
+
+# just the DP accounting approximation
