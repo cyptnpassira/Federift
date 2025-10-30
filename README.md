@@ -121,3 +121,35 @@ python -m federift run federift/scenarios/noniid-dp.json
 python -m federift partition federift/scenarios/fractured-robust.json
 
 # just the DP accounting approximation
+python -m federift privacy federift/scenarios/noniid-dp.json
+```
+
+Or install the console script:
+
+```bash
+pip install -e .
+federift run federift/scenarios/baseline-iid.json
+```
+
+### Go
+
+```bash
+cd topology
+go build ./...
+go run ./cmd/topology -scenario ../federift/scenarios/fractured-robust.json
+```
+
+### The handshake: Go network feeds Python privacy
+
+```bash
+# 1) Go simulates the network and writes a reachability trace
+cd topology
+go run ./cmd/topology \
+    -scenario ../federift/scenarios/fractured-robust.json \
+    -emit-trace ../trace.json
+
+# 2) Python runs the federated round, honouring exactly those drops
+cd ..
+python -m federift run federift/scenarios/fractured-robust.json --trace trace.json
+```
+
