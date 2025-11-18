@@ -31,3 +31,9 @@ distribution, and "training" is a deterministic pull toward it. This keeps:
 The cost is honesty: these clients don't learn anything real, and the README
 says so loudly.
 
+## The RNG discipline
+
+All randomness flows from one master seed through
+`sha256(master :: label-parts)` sub-streams (`rng.py` in Python, an FNV-based
+mirror in Go). Two consequences:
+
