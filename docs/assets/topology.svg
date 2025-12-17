@@ -59,3 +59,11 @@
     <circle cx="470" cy="70"  r="9"/>
     <circle cx="470" cy="310" r="9"/>
     <circle cx="570" cy="110" r="9"/>
+    <circle cx="570" cy="190" r="9"/>
+    <circle cx="570" cy="270" r="9"/>
+  </g>
+
+  <!-- partition seam sweeping the left links during the isolation window -->
+  <g stroke="#f43f5e" stroke-width="2.6" fill="none" opacity="0">
+    <path d="M300,60 L285,150 L305,150 L288,300"/>
+    <animate attributeName="opacity" values="0;0;0.95;0.95;0" keyTimes="0;0.35;0.45;0.72;0.78" dur="8s" repeatCount="indefinite"/>
