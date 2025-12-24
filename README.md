@@ -34,3 +34,34 @@ splits into islands. Federift makes the breakage first-class:
 - **drops**: Bernoulli packet loss before an update ever leaves.
 - **stragglers**: a heavy tail that pushes a client past the round deadline.
 - **partitions**: scheduled windows where a named set of clients is isolated
+  from the aggregator entirely.
+
+Each of those removes a client from a round. That changes who contributes,
+which changes what the aggregate reveals, which is where the privacy story
+starts. The whole repository exists to let you watch those three things move
+together.
+
+## The two halves
+
+### Python, the privacy core (`federift/`)
+
+Pure standard library. No numpy, no torch. Vectors are `list[float]`.
+
+| module | responsibility |
+|---|---|
+| `vectors.py`   | vector math (`add`, `mean`, `clip_l2`, `l2_distance`) |
+| `rng.py`       | seed fan-out via SHA-256 into reproducible sub-streams |
+| `partition.py` | IID split plus Dirichlet(alpha) non-IID label skew |
+| `clients.py`   | deterministic toy-vector clients, each with a target from its label mix |
+| `aggregate.py` | FedAvg, uniform mean, coordinate-wise trimmed mean, simplified multi-Krum |
+| `privacy.py`   | Gaussian-mechanism noise plus approximate (epsilon, delta) accounting |
+| `leakage.py`   | membership and leakage heuristics (distinguishability, gradient cosine) |
+| `simulator.py` | the round loop that ties it together and can consume a Go trace |
+| `cli.py`       | text and JSON reports |
+
+### Go, the topology engine (`topology/`)
+
+Also pure standard library (`math/rand`, `hash/fnv`, `encoding/json`).
+
+| package | responsibility |
+|---|---|
