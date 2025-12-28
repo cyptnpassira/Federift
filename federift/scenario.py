@@ -88,3 +88,16 @@ class Scenario:
 
 def load(path: str) -> Scenario:
     with open(path, "r", encoding="utf-8") as fh:
+        data = json.load(fh)
+    return from_dict(data)
+
+
+def from_dict(data: Dict[str, Any]) -> Scenario:
+    return Scenario(
+        name=str(data.get("name", "unnamed")),
+        seed=int(data.get("seed", 1234)),
+        federation=dict(data.get("federation", {})),
+        privacy=dict(data.get("privacy", {})),
+        network=dict(data.get("network", {})),
+        raw=data,
+    )
