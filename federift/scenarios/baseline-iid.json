@@ -25,3 +25,7 @@
     "drop_prob": 0.02,
     "straggler_prob": 0.05,
     "straggler_extra_ms": 400,
+    "deadline_ms": 300,
+    "partitions": []
+  }
+}
