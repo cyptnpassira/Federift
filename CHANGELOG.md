@@ -52,3 +52,10 @@ semantic-ish versions.
 - Initial Python stdlib core: deterministic toy-vector clients, IID
   partitioning, FedAvg aggregation, seeded RNG fan-out, and a text CLI report.
 - Project scaffolding: `pyproject.toml`, LICENSE, README.
+
+## [0.0.1] - 2021-06-14
+
+### Added
+- Research notes and experiment sketch that became Federift.
+- Prototype vector-client simulation with a single aggregation rule.
+# draft note 1
