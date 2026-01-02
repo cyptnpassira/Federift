@@ -28,3 +28,10 @@ privacy: ## print the DP accounting approximation
 pipeline: ## Go emits a network trace, Python consumes it
 	cd topology && go run ./cmd/topology -scenario ../$(SCEN) -emit-trace ../$(TRACE)
 	$(PY) -m federift run $(SCEN) --trace $(TRACE)
+
+clean: ## remove build artifacts and traces
+	-cd topology && go clean ./...
+	-$(PY) -c "import shutil,glob,os; [shutil.rmtree(p,ignore_errors=True) for p in glob.glob('federift/**/__pycache__',recursive=True)]"
+	-$(PY) -c "import os; os.path.exists('$(TRACE)') and os.remove('$(TRACE)')"
+
+# draft note 2
