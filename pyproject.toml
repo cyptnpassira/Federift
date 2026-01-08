@@ -29,3 +29,10 @@ Changelog = "https://example.invalid/federift/blob/main/CHANGELOG.md"
 [project.scripts]
 federift = "federift.cli:main"
 
+[tool.setuptools]
+packages = ["federift"]
+
+[tool.setuptools.package-data]
+federift = ["scenarios/*.json"]
+
+# draft note 5
