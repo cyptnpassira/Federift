@@ -18,3 +18,8 @@ Core pieces:
 - :mod:`federift.cli`          -- command line reports
 """
 
+__version__ = "0.5.0"
+
+__all__ = ["__version__"]
+
+# draft note 6
