@@ -27,3 +27,11 @@ Both do the same two steps:
 
 - The Python **drop** column spikes during the partition windows defined in the
   scenario's `network.partitions`.
+- **convergence** flattens while a cluster is isolated and resumes after.
+- With `sigma > 0`, the privacy block prints approximate ε and the leakage
+  signals shrink relative to the `sigma = 0` baseline.
+
+Nothing here is a benchmark — it's a teaching loop. See the README's honesty
+section before drawing conclusions.
+
+# draft note 9
