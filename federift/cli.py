@@ -148,3 +148,25 @@ def build_parser() -> argparse.ArgumentParser:
     pr.set_defaults(func=cmd_run)
 
     pp = sub.add_parser("privacy", help="print DP accounting approximation")
+    pp.add_argument("scenario")
+    pp.set_defaults(func=cmd_privacy)
+
+    pt = sub.add_parser("partition", help="inspect non-IID skew")
+    pt.add_argument("scenario")
+    pt.set_defaults(func=cmd_partition)
+
+    ps = sub.add_parser("scenarios", help="list bundled scenarios")
+    ps.set_defaults(func=cmd_scenarios)
+    return p
+
+
+def main(argv: Optional[List[str]] = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    return args.func(args)
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+
+# draft note 8
