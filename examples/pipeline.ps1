@@ -20,3 +20,10 @@ Write-Host ">> [py] running federated round with the network trace applied"
 Push-Location $root
 try {
     python -m federift run $Scenario --trace $trace
+} finally {
+    Pop-Location
+}
+
+Write-Host ">> done. (trace left at $trace; 'make clean' removes it)"
+
+# draft note 10
