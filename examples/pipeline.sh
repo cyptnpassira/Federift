@@ -11,3 +11,8 @@ echo ">> [go] simulating network topology for ${SCEN}"
 ( cd "${ROOT}/topology" && go run ./cmd/topology -scenario "../${SCEN}" -emit-trace "${TRACE}" )
 
 echo ">> [py] running federated round with the network trace applied"
+( cd "${ROOT}" && python -m federift run "${SCEN}" --trace "${TRACE}" )
+
+echo ">> done. (trace left at ${TRACE}; 'make clean' removes it)"
+
+# draft note 11
