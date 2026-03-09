@@ -15,4 +15,4 @@ echo ">> [py] running federated round with the network trace applied"
 
 echo ">> done. (trace left at ${TRACE}; 'make clean' removes it)"
 
-# draft note 11
+# draft note 25
