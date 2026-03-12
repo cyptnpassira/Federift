@@ -34,4 +34,4 @@ clean: ## remove build artifacts and traces
 	-$(PY) -c "import shutil,glob,os; [shutil.rmtree(p,ignore_errors=True) for p in glob.glob('federift/**/__pycache__',recursive=True)]"
 	-$(PY) -c "import os; os.path.exists('$(TRACE)') and os.remove('$(TRACE)')"
 
-# draft note 16
+# draft note 30
