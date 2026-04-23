@@ -35,4 +35,4 @@ packages = ["federift"]
 [tool.setuptools.package-data]
 federift = ["scenarios/*.json"]
 
-# draft note 33
+# draft note 47
