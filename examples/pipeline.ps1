@@ -26,4 +26,4 @@ try {
 
 Write-Host ">> done. (trace left at $trace; 'make clean' removes it)"
 
-# draft note 38
+# draft note 52
