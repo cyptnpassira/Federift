@@ -55,4 +55,4 @@ If a change forces *both* languages to recompile together, it's modelled wrong.
 Add fields under the block owned by one side; the other side ignores unknown
 JSON keys by construction.
 
-# draft note 56
+# draft note 70
