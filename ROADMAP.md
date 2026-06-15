@@ -14,4 +14,4 @@ Checked items are shipped and runnable; unchecked items are future work.
 - [ ] Congestion-aware graph network simulation.
 - [ ] Automated test suites.
 
-# draft note 60
+# draft note 4
