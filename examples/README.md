@@ -33,5 +33,3 @@ Both do the same two steps:
 
 Nothing here is a benchmark — it's a teaching loop. See the README's honesty
 section before drawing conclusions.
-
-# draft note 9
