@@ -54,5 +54,3 @@ these bounds are loose and must not be mistaken for guarantees.
 If a change forces *both* languages to recompile together, it's modelled wrong.
 Add fields under the block owned by one side; the other side ignores unknown
 JSON keys by construction.
-
-# draft note 14
