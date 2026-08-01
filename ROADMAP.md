@@ -13,5 +13,3 @@ Checked items are shipped and runnable; unchecked items are future work.
 - [ ] Real model training and calibrated privacy attacks.
 - [ ] Congestion-aware graph network simulation.
 - [ ] Automated test suites.
-
-# draft note 4
