@@ -58,4 +58,3 @@ semantic-ish versions.
 ### Added
 - Research notes and experiment sketch that became Federift.
 - Prototype vector-client simulation with a single aggregation rule.
-# draft note 15
