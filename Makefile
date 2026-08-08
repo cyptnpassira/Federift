@@ -33,5 +33,3 @@ clean: ## remove build artifacts and traces
 	-cd topology && go clean ./...
 	-$(PY) -c "import shutil,glob,os; [shutil.rmtree(p,ignore_errors=True) for p in glob.glob('federift/**/__pycache__',recursive=True)]"
 	-$(PY) -c "import os; os.path.exists('$(TRACE)') and os.remove('$(TRACE)')"
-
-# draft note 2
