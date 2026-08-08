@@ -296,5 +296,3 @@ running both halves. Milestones that are done live in [ROADMAP.md](ROADMAP.md);
 the change history is in [CHANGELOG.md](CHANGELOG.md).
 
 <div align="center"><sub>federift · break the network, watch the privacy · educational only</sub></div>
-
-# draft note 3
