@@ -44,7 +44,7 @@ def _bar(value: float, width: int = 24, vmax: float = 1.0) -> str:
 def cmd_run(args: argparse.Namespace) -> int:
     sc = scenario_mod.load(args.scenario)
     trace = _load_trace(args.trace)
-    result = simulator.run(sc, network_trace=trace)
+    result = simulator.run(sc, network_trace=trace, max_rounds=args.max_rounds)
 
     if args.json:
         payload = {
@@ -144,6 +144,7 @@ def build_parser() -> argparse.ArgumentParser:
     pr = sub.add_parser("run", help="run a scenario")
     pr.add_argument("scenario", help="path to scenario JSON")
     pr.add_argument("--trace", help="optional Go-produced network trace JSON")
+    pr.add_argument("--max-rounds", type=int, default=0, help="cap the number of rounds to run (0 = all)")
     pr.add_argument("--json", action="store_true", help="emit JSON instead of text")
     pr.set_defaults(func=cmd_run)
 

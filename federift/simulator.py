@@ -78,12 +78,17 @@ def _aggregate(name: str, deltas, weights, beta) -> Vector:
 def run(
     scenario: Scenario,
     network_trace: Optional[Dict[int, List[int]]] = None,
+    max_rounds: Optional[int] = None,
 ) -> SimResult:
     """Run the federated simulation for ``scenario``.
 
     ``network_trace`` maps ``round_idx -> [reachable_client_ids]`` (typically
     produced by the Go engine's ``--emit-trace``). Unreachable selected clients
     are treated as dropped for that round.
+
+    ``max_rounds`` caps the number of rounds actually executed; rounds beyond
+    the cap are omitted from the report. A value of 0 or negative runs all
+    rounds, matching the scenario definition.
     """
     if scenario.partition == "iid":
         parts = partition.iid_partition(
@@ -108,6 +113,8 @@ def run(
     last_targets: List[Vector] = []
 
     for rnd in range(scenario.rounds):
+        if max_rounds is not None and max_rounds > 0 and rnd >= max_rounds:
+            break
         selected = _select(rnd, scenario.num_clients, scenario.clients_per_round, scenario.seed)
 
         dropped = 0
