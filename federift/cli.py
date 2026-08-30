@@ -93,7 +93,8 @@ def cmd_privacy(args: argparse.Namespace) -> int:
     if sc.sigma <= 0.0:
         print("sigma <= 0: no noise, epsilon is unbounded (non-private).")
         return 0
-    rep = privacy.account(sc.sigma, sc.clip_norm, sc.delta, sc.rounds)
+    rounds = args.rounds if args.rounds and args.rounds > 0 else sc.rounds
+    rep = privacy.account(sc.sigma, sc.clip_norm, sc.delta, rounds)
     print(json.dumps(rep.as_dict(), indent=2))
     return 0
 
@@ -150,6 +151,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     pp = sub.add_parser("privacy", help="print DP accounting approximation")
     pp.add_argument("scenario")
+    pp.add_argument("--rounds", type=int, default=0, help="override the round count (0 = scenario value)")
     pp.set_defaults(func=cmd_privacy)
 
     pt = sub.add_parser("partition", help="inspect non-IID skew")
