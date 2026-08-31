@@ -4,6 +4,12 @@ All notable changes to Federift are documented here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/); this project uses simple
 semantic-ish versions.
 
+## [Unreleased]
+
+### Added
+- `run --max-rounds` to cap the executed rounds for quick spot checks.
+- `privacy --rounds` to compute the DP budget for a subset of rounds.
+
 ## [0.5.0] - 2026-09-01
 
 ### Added
